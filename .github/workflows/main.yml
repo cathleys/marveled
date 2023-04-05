@@ -28,6 +28,6 @@ jobs:
       - run: npm run build
       # run tests with Cypress
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v12
         with:
           start: npm start
