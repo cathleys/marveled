@@ -1,27 +1,33 @@
 name: CI
 
 on:
+  # runs on pushes to the main branch
   push:
-    branches: ["main"]
+    branches: [main]
+  # also runs inside pull requests that target the main branch
   pull_request:
-    branches: ["main"]
+    branches: [main]
 
 jobs:
   build:
+    # uses a Ubuntu Docker image (like a virtual machine)
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "14"
           cache: "npm"
+      # install dependencies
       - run: npm ci
+      # run ESLint
       - run: npm run lint
-      - run: npm run build --if-present
-      - run: npm test
+
+      # verify that there are no build errors
+      - run: npm run build
+      # run tests with Cypress
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
