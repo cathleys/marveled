@@ -33,5 +33,9 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-cypress": "^2.13.2",
     "typescript": "^5.0.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
   }
 }
