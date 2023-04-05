@@ -28,7 +28,7 @@ const Skyline = styled.div`
 
 export default function Home() {
   const page = useChar();
-  const { results } = page.data.data;
+  const { results } = page.data || {};
   console.log("page", page);
   return (
     <>
@@ -44,7 +44,7 @@ export default function Home() {
           <Button variant="contained">Hellow</Button>
           <CustomButton variant="contained">Hello</CustomButton>
           <ul>
-            {results.map((item: any) => (
+            {(results || []).map((item: any) => (
               <li key={item.id}>Name: {item.name}</li>
             ))}
           </ul>
