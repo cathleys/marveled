@@ -25,11 +25,7 @@ const Skyline = styled.div`
   background-repeat: repeat-x;
   min-height: 200px;
 `;
-const Title = styled.h1`
-  font-family: ccbiffbamboom, sans-serif;
-  font-weight: bold;
-  color: black;
-`;
+const Title = styled.h1``;
 
 export default function Home() {
   const page = useChar();
