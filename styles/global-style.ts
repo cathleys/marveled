@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   ${FontStyles}
 
   body {
-    font-family: "Comic Neue", Sans-Serif;
+    font-family: Comic Neue, Sans-Serif;
   }
 
   h1 {
