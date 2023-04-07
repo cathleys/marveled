@@ -25,6 +25,11 @@ const Skyline = styled.div`
   background-repeat: repeat-x;
   min-height: 200px;
 `;
+const Title = styled.h1`
+  font-family: ccbiffbamboom, sans-serif;
+  font-weight: bold;
+  color: black;
+`;
 
 export default function Home() {
   const page = useChar();
@@ -41,6 +46,7 @@ export default function Home() {
       <main>
         <div>
           <Skyline />
+          <Title>MARVELOUS</Title>
           <Button variant="contained">Hellow</Button>
           <CustomButton variant="contained">Hello</CustomButton>
           <ul>
