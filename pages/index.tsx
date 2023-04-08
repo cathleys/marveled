@@ -47,7 +47,7 @@ export default function Home() {
       <main>
         <div>
           <Skyline>
-            <HeaderName>MARVELOUS</HeaderName>
+            <HeaderName data-cy="h1">MARVELOUS</HeaderName>
           </Skyline>
           <ul>
             {(results || []).map((item: any) => (
