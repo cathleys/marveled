@@ -1,16 +1,11 @@
 import Head from "next/head";
-import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
 import { useChar } from "@features/use-char";
 
-const CustomButton = styled(Button)`
-  background: black;
-  color: white;
-  &:hover {
-    background: pink;
-  }
-`;
 const Skyline = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url("/icons/SkyLinefinal.png"),
     linear-gradient(
       to bottom,
@@ -25,7 +20,17 @@ const Skyline = styled.div`
   background-repeat: repeat-x;
   min-height: 200px;
 `;
-const Title = styled.h1``;
+const HeaderName = styled.h1`
+  font-size: 5rem;
+  margin: 0;
+  letter-spacing: 3px;
+  transform: rotate(-5deg) skew(-10deg, 0);
+  text-shadow: -2px -2px yellow, 2px 2px orange, 3px 3px orange;
+
+  @media (max-width: 375px) {
+    font-size: 3rem;
+  }
+`;
 
 export default function Home() {
   const page = useChar();
@@ -41,10 +46,9 @@ export default function Home() {
       </Head>
       <main>
         <div>
-          <Skyline />
-          <Title>MARVELOUS</Title>
-          <Button variant="contained">Hellow</Button>
-          <CustomButton variant="contained">Hello</CustomButton>
+          <Skyline>
+            <HeaderName>MARVELOUS</HeaderName>
+          </Skyline>
           <ul>
             {(results || []).map((item: any) => (
               <li key={item.id}>Name: {item.name}</li>
