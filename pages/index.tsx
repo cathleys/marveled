@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styled from "@emotion/styled";
-import { useChar } from "@features/use-char";
 
 const Skyline = styled.div`
   display: flex;
@@ -33,9 +32,6 @@ const HeaderName = styled.h1`
 `;
 
 export default function Home() {
-  const page = useChar();
-  const { results } = page.data || {};
-  console.log("page", page);
   return (
     <>
       <Head>
@@ -49,11 +45,6 @@ export default function Home() {
           <Skyline>
             <HeaderName data-cy="h1">MARVELOUS</HeaderName>
           </Skyline>
-          <ul>
-            {(results || []).map((item: any) => (
-              <li key={item.id}>Name: {item.name}</li>
-            ))}
-          </ul>
         </div>
       </main>
     </>
