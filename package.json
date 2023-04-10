@@ -5,9 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "test": "test",
     "start": "next start",
     "lint": "next lint",
-    "cypress": "cypress open"
+    "prettier": "prettier --check .",
+    "cypress": "cypress open",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
