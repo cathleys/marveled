@@ -59,11 +59,12 @@ export default function Home() {
           </Skyline>
         </div>
       </header>
-      <body>
+
+      <main>
         <SearchContainer>
           <Title>Marvelous</Title>
         </SearchContainer>
-      </body>
+      </main>
     </>
   );
 }
