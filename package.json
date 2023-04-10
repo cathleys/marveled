@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test": "test",
     "start": "next start",
     "lint": "next lint",
+    "test": "next page",
     "prettier": "prettier --check .",
     "cypress": "cypress open",
     "prepare": "husky install"
@@ -42,9 +42,5 @@
     "lint-staged": "^13.2.1",
     "prettier": "2.8.7",
     "typescript": "^5.0.3"
-  },
-  "lint-staged": {
-    "*.{jsx,js,ts,tsx}": "eslint --cache --fix",
-    "*.{jsx,js,ts,tsx,css,md}": "prettier --write"
   }
 }
