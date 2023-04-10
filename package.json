@@ -7,10 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "next page",
     "prettier": "prettier --check .",
-    "cypress": "cypress open",
-    "prepare": "husky install"
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -38,8 +36,6 @@
     "cypress": "^12.9.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-cypress": "^2.13.2",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.1",
     "prettier": "2.8.7",
     "typescript": "^5.0.3"
   }
