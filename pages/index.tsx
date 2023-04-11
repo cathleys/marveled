@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styled from "@emotion/styled";
+import { PageContainer } from "@features";
 
 const Skyline = styled.div`
   display: flex;
@@ -53,18 +54,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <header>
-        <div>
-          <Skyline>
-            <HeaderName data-cy="h1">MARVELOUS</HeaderName>
-          </Skyline>
-        </div>
+        <Skyline>
+          <HeaderName data-cy="h1">MARVELOUS</HeaderName>
+        </Skyline>
       </header>
-
-      <main>
+      <div>
         <SearchContainer>
           <Title>Marvelous</Title>
         </SearchContainer>
-      </main>
+        <PageContainer>container</PageContainer>
+      </div>
     </>
   );
 }
