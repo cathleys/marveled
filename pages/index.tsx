@@ -1,12 +1,12 @@
 import Head from "next/head";
 import styled from "@emotion/styled";
-import { PageContainer } from "@features";
+import { HeroBanner, PageContainer } from "@features";
 
 const Skyline = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/icons/SkyLinefinal.png"),
+  background-image: url("/icons/sky-line.png"),
     linear-gradient(
       to bottom,
       #163c52 0%,
@@ -62,7 +62,9 @@ export default function Home() {
         <SearchContainer>
           <Title>Marvelous</Title>
         </SearchContainer>
-        <PageContainer>container</PageContainer>
+        <PageContainer>
+          <HeroBanner />
+        </PageContainer>
       </div>
     </>
   );
