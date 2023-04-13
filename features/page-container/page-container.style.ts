@@ -1,10 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
-type PageProps = {
-  children: React.ReactNode;
-};
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   background-color: #f5f5f5;
   height: 100vh;
@@ -14,14 +10,7 @@ const Container = styled.div`
   background-size: 8px 8px;
   background-color: rgb(245, 245, 245);
 `;
-const Main = styled.main`
+
+export const Main = styled.main`
   flex: 1;
 `;
-
-export function PageContainer({ children }: PageProps) {
-  return (
-    <Container>
-      <Main>{children}</Main>
-    </Container>
-  );
-}
