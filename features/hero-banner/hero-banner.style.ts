@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const BodyContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 2rem;
 `;
 export const Container = styled.div`
-  width: 64rem;
-  height: 20rem;
+  max-width: 64rem;
   background: #f2c94d url("/icons/captain-marvel.jpg") no-repeat right top;
   background-size: 39.375rem;
   border-radius: 0.625rem;
