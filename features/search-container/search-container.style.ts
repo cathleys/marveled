@@ -9,6 +9,6 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.p`
-  padding-left: 7.5rem;
+  padding-left: 10rem;
   color: white;
 `;
