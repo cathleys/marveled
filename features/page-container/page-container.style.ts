@@ -11,5 +11,9 @@ export const Container = styled.div`
 `;
 export const Main = styled.main`
   flex: 1;
-  padding: 2rem 10rem 2rem 10rem;
+  padding: 2rem 10rem;
+
+  @media (max-width: 52.125rem) {
+    padding: 0;
+  }
 `;

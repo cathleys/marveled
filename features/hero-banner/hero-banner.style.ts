@@ -5,6 +5,10 @@ export const BodyContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 52.125rem) {
+    padding: 2rem 1rem;
+  }
 `;
 export const Container = styled.div`
   max-width: 64rem;
@@ -16,11 +20,19 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem;
+
+  @media (max-width: 52.125rem) {
+    text-align: center;
+  }
 `;
 export const H1 = styled.h1`
   font-size: 2.813rem;
   letter-spacing: 0.1rem;
   margin-bottom: 0;
+
+  @media (max-width: 52.125rem) {
+    font-size: 2rem;
+  }
 `;
 export const InfoText = styled.p`
   font-size: 1.125rem;
@@ -28,4 +40,8 @@ export const InfoText = styled.p`
   border-radius: 0.5rem;
   padding: 0.5rem;
   margin-right: 400px;
+
+  @media (max-width: 52.125rem) {
+    margin: 0 auto;
+  }
 `;

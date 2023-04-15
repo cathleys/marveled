@@ -16,6 +16,12 @@ export const Title = styled(HeaderName)`
   letter-spacing: normal;
   text-shadow: -0.5px 0.5px white, 0.5px 0.5px yellow, 1px 1px orange;
   padding-left: 10rem;
+
+  @media (max-width: 52.125rem) {
+    font-size: 1rem;
+    margin-left: 1rem;
+    padding: 0;
+  }
 `;
 
 export const LogoLink = styled(Link)`
