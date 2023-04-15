@@ -1,6 +1,7 @@
 import React from "react";
 import * as P from "./page-container.style";
-import { SearchContainer } from "@features/search-container";
+import { SearchContainer } from "@features";
+import HeaderBoard from "./header-board";
 
 type PageProps = {
   children: React.ReactNode;
@@ -10,9 +11,7 @@ export function PageContainer({ children }: PageProps) {
   return (
     <>
       <header>
-        <P.Skyline>
-          <P.HeaderName data-cy="h1">MARVELOUS</P.HeaderName>
-        </P.Skyline>
+        <HeaderBoard />
       </header>
       <SearchContainer />
       <P.Container>
