@@ -32,7 +32,6 @@ export const HeaderName = styled.h1`
 export const Container = styled.div`
   display: flex;
   background-color: #f5f5f5;
-  height: 100vh;
   background-image: radial-gradient(rgb(145, 145, 145) 15.2%, transparent 15.2%),
     radial-gradient(rgb(145, 145, 145) 15.2%, transparent 15.2%);
   background-position: 0px 0px, 4px 4px;

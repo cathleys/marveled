@@ -1,5 +1,12 @@
 import styled from "@emotion/styled";
 
+export const HeroPageCardContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+`;
 export const Card = styled.div`
   display: flex;
   flex-wrap: wrap;
