@@ -1,4 +1,6 @@
 .next
 
+.hero-page-card-data.tsx
+
 *.tsbuildinfo
 next-env.d.ts

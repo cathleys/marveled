@@ -15,7 +15,7 @@ export const heroPageCards = [
     name: "cm-card-comic3",
     src: "/icons/cm-card-comic3.jpg",
     title: "Captain Marvel: Earth's Mightiest Hero Vol. 5",
-    info: "It is a bold new frontier for Carol Danvers, soaring to ever greater heights as the leader of the all- new Alpha Flight space program! Yup, Alpha Flight — including classic favorites Puck, Sasquatch and Aurora!"
+    info: "It's a bold new frontier for Carol Danvers, soaring to ever greater heights as the leader of the all- new Alpha Flight space program! Yup, Alpha Flight — including classic favorites Puck, Sasquatch and Aurora!"
   },
   {
     name: "cm-card-comic4",
