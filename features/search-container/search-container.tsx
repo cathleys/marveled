@@ -6,7 +6,7 @@ type SearchContainerProps = {
 };
 export function SearchContainer({ href }: SearchContainerProps) {
   return (
-    <Container>
+    <Container data-cy="search-container">
       <LogoLink href={href} passHref>
         <Title>Marvelous</Title>
       </LogoLink>
