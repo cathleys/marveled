@@ -1,6 +1,6 @@
 .next
 
-.hero-page-card-data.tsx
+features/hero-page-card/component/hero-page-card-data.tsx
 
 *.tsbuildinfo
 next-env.d.ts
