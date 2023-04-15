@@ -13,7 +13,7 @@ export function PageContainer({ children }: PageProps) {
       <header>
         <HeaderBoard />
       </header>
-      <SearchContainer />
+      <SearchContainer href={"/"} />
       <P.Container>
         <P.Main>{children}</P.Main>
       </P.Container>

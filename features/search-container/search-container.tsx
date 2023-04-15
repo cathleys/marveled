@@ -1,10 +1,15 @@
 import React from "react";
-import { Container, Title } from "./search-container.style";
+import { Container, LogoLink, Title } from "./search-container.style";
 
-export function SearchContainer() {
+type SearchContainerProps = {
+  href: string;
+};
+export function SearchContainer({ href }: SearchContainerProps) {
   return (
     <Container>
-      <Title>Marvelous</Title>
+      <LogoLink href={href} passHref>
+        <Title>Marvelous</Title>
+      </LogoLink>
     </Container>
   );
 }
