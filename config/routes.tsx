@@ -1,4 +1,4 @@
 export const Routes = {
   home: ".",
-  hero: "/hero"
+  hero: "/hero",
 };
