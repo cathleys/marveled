@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: Comic Neue, Sans-Serif;
   }
 
-  h1 {
+  h1,h3 {
     font-family: CCBiffBamBoom, Sans-Serif;
   }
 `;
