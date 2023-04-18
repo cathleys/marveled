@@ -21,7 +21,9 @@ const ImageContainer = styled.div`
 `;
 // const Image = styled.img``;
 
-const ButtonStyle = styled(A.ButtonWrapper)``;
+const ButtonStyle = styled(A.ButtonWrapper)`
+  padding-left: 0;
+`;
 const InfoContainer = styled.div`
   padding: 0 1.5rem 0;
   max-width: 42rem;
@@ -116,9 +118,9 @@ const HeroPage: NextPage = () => {
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
-          <A.ButtonWrapper>
+          <ButtonStyle>
             <A.PageButton href="/" label="Find Out More!" />
-          </A.ButtonWrapper>
+          </ButtonStyle>
         </InfoContainer>
       </Container>
       <CommercialContainer>
