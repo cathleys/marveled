@@ -28,7 +28,6 @@ export const TextandButtonWrapper = styled.div`
 `;
 export const ButtonWrapper = styled.div`
   padding: 0.75rem 2.625rem;
-  padding-left: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.25);
   background: rgba(217, 217, 217, 0.25);
 `;
