@@ -15,6 +15,7 @@ export const Container = styled.div`
   background: #f2c94d url("/icons/captain-marvel.jpg") no-repeat right top;
   background-size: 39.375rem;
   border-radius: 0.625rem;
+  box-shadow: -1px 33px 58px -23px rgba(0, 0, 0, 0.36);
 `;
 export const TextWrapper = styled.div`
   display: flex;
