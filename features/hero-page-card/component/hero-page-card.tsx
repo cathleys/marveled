@@ -1,6 +1,7 @@
 import React from "react";
 import { PageButton } from "@features/ui";
 import * as H from "./hero-page-card.style";
+import { Routes } from "@config/routes";
 
 type HeroPageCardProps = {
   src: string;
@@ -19,7 +20,7 @@ export function HeroPageCard({ title, info, ...cardProps }: HeroPageCardProps) {
         <p>{info}</p>
       </H.TextandButtonWrapper>
       <H.ButtonWrapper>
-        <PageButton href="/" label="Find Out More!" />
+        <PageButton href={Routes.home} label="Find Out More!" />
       </H.ButtonWrapper>
     </H.Card>
   );
