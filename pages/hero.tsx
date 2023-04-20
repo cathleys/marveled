@@ -116,6 +116,7 @@ const HeroPage: NextPage = () => {
           </p>
           <ButtonStyle>
             <A.PageButton href="/" label="Find Out More!" />
+            <p>Data provided by Marvel</p>
           </ButtonStyle>
         </InfoContainer>
       </Container>
