@@ -20,11 +20,6 @@ export const customStyles = {
     display: "none",
   }),
 
-  indicatorsContainer: (defaultStyles: any) => ({
-    ...defaultStyles,
-    display: "none",
-  }),
-
   input: (defaultStyles: any) => ({
     ...defaultStyles,
     color: "white",
