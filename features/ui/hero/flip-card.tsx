@@ -18,13 +18,18 @@ const Container = styled.div`
 const TitleAndTextWrapper = styled.div`
   padding: 1rem;
 `;
-
-const FrontCard = styled.img`
-  width: 15.125rem;
+const FrontCardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 3px solid black;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   box-shadow: -1px 33px 58px -23px rgba(0, 0, 0, 0.36);
+`;
+const FrontCard = styled.img`
+  width: 15.125rem;
+  height: 100%;
 `;
 
 const BackCard = styled.div`
@@ -32,7 +37,7 @@ const BackCard = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 15.125rem;
-  height: 22.88rem;
+  height: 23rem;
   margin-bottom: 1rem;
   background: white;
   border: 3px solid black;
@@ -52,9 +57,11 @@ export function FlipCard({ ...cardProps }: FlipCardProps) {
     <>
       <Container>
         <ReactCardFlip isFlipped={isHovered} flipDirection="horizontal">
-          <FrontCard {...cardProps} onMouseOver={handleMouseOver} />
+          <FrontCardWrapper onMouseOver={handleMouseOver}>
+            <FrontCard {...cardProps} />
+          </FrontCardWrapper>
 
-          <BackCard onClick={handleMouseOver}>
+          <BackCard onMouseOut={handleMouseOver}>
             <TitleAndTextWrapper>
               <h2>Something</h2>
               <p>lorem ipsum</p>
