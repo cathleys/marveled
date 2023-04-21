@@ -1,8 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
 import styled from "styled-components";
 import ReactCardFlip from "react-card-flip";
-import { PageButton } from "@features";
-import { ButtonWrapper } from "@features/hero-page-card";
+import { ButtonWrapper, PageButton } from "@features";
 
 type FlipCardProps = {
   src: string;
@@ -40,9 +39,7 @@ const BackCard = styled.div`
   border-radius: 0.5rem;
   box-shadow: -1px 33px 58px -23px rgba(0, 0, 0, 0.36);
 `;
-const ButtonStyle = styled(ButtonWrapper)`
-  padding: 1rem;
-`;
+
 export function FlipCard({ ...cardProps }: FlipCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -57,14 +54,14 @@ export function FlipCard({ ...cardProps }: FlipCardProps) {
         <ReactCardFlip isFlipped={isHovered} flipDirection="horizontal">
           <FrontCard {...cardProps} onMouseOver={handleMouseOver} />
 
-          <BackCard onMouseOver={handleMouseOver}>
+          <BackCard onClick={handleMouseOver}>
             <TitleAndTextWrapper>
               <h2>Something</h2>
               <p>lorem ipsum</p>
             </TitleAndTextWrapper>
-            <ButtonStyle>
+            <ButtonWrapper style={{ padding: "1rem" }}>
               <PageButton label="More Info" href={""} />
-            </ButtonStyle>
+            </ButtonWrapper>
           </BackCard>
         </ReactCardFlip>
       </Container>
