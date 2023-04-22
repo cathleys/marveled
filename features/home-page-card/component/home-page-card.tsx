@@ -1,6 +1,6 @@
 import React from "react";
 import { PageButton } from "@features/ui";
-import * as H from "./hero-page-card.style";
+import * as H from "./home-page-card.style";
 import { Routes } from "@config/routes";
 
 type HeroPageCardProps = {
