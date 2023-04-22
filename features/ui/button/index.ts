@@ -1,1 +1,1 @@
-export { PageButton } from "./page-button";
+export { PageButton } from "./button";

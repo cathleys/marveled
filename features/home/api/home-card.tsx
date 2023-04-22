@@ -1,4 +1,4 @@
-export const heroPageCards = [
+export const homeCards = [
   {
     name: "cm-card-comic1",
     src: "/icons/cm-card-comic1.jpg",

@@ -1,6 +1,6 @@
 import React from "react";
 import { PageButton } from "@features/ui";
-import * as H from "./home-page-card.style";
+import * as H from "./home-card.style";
 import { Routes } from "@config/routes";
 
 type HeroPageCardProps = {
@@ -9,7 +9,7 @@ type HeroPageCardProps = {
   title: string;
   info: string;
 };
-export function HeroPageCard({ title, info, ...cardProps }: HeroPageCardProps) {
+export function HomeCard({ title, info, ...cardProps }: HeroPageCardProps) {
   return (
     <H.Card>
       <div>
