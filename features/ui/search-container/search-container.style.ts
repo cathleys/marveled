@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { HeaderName } from "@features";
 import Link from "next/link";
+import { HeaderName } from "../page-container";
 
 export const Container = styled.div`
   display: flex;
