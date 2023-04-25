@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomButton } from "./page-button.style";
+import { CustomButton } from "./button.style";
 import Link from "next/link";
 
 type ButtonProps = {

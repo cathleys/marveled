@@ -1,6 +1,5 @@
 import Head from "next/head";
 import * as H from "@features";
-import { HeroBanner } from "@features/ui";
 
 export default function Home() {
   return (
@@ -11,10 +10,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <H.PageContainer>
-        <HeroBanner />
+        <H.HomeBanner />
         <H.HeroPageCardContainer>
-          {H.heroPageCards.map((card, index) => (
-            <H.HeroPageCard
+          {H.homeCards.map((card, index) => (
+            <H.HomeCard
               key={index}
               src={card.src}
               alt={card.name}

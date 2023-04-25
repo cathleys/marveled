@@ -1,8 +1,8 @@
 import React from "react";
-import * as H from "./hero-banner.style";
+import * as H from "./home-banner.style";
 import { PageButton } from "@features/ui";
 
-export function HeroBanner() {
+export function HomeBanner() {
   return (
     <H.BodyContainer>
       <H.Container>
