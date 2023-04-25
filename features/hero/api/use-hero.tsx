@@ -8,7 +8,7 @@ async function getHero(id: number) {
   const { data } = await axios.get(
     `https://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${key1}&hash=${hash}`
   );
-  console.log(data);
+  console.log("getHero data", data);
   return data;
 }
 

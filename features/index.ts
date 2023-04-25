@@ -4,6 +4,5 @@ export * from "./hero";
 export * from "./ui/search-container";
 export * from "./ui/card";
 export * from "./ui/button";
-export * from "./ui/search-bar";
 export * from "./characters/component";
 export * from "./characters";

@@ -1,7 +1,10 @@
 import type { NextPage } from "next";
 import * as A from "@features";
+// import { useHero } from "@features/hero/api/use-hero";
 
 const HeroPage: NextPage = () => {
+  // const hero = useHero();
+
   return (
     <A.PageContainer>
       <A.CardContainer>
