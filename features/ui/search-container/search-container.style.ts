@@ -28,6 +28,20 @@ export const Title = styled(HeaderName)`
 export const LogoLink = styled(Link)`
   text-decoration: none;
   color: black;
+
+  @media (max-width: 52.125rem) {
+    margin-bottom: 0.5rem;
+  }
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 52.125rem) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Input = styled.input`
@@ -39,4 +53,8 @@ export const Input = styled.input`
   padding: 0.6rem;
   color: white;
   margin-right: 0.5rem;
+
+  @media (max-width: 52.125rem) {
+    margin-bottom: 0.5rem;
+  }
 `;
