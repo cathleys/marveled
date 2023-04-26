@@ -7,6 +7,7 @@ const HeroPage: NextPage = () => {
 
   return (
     <A.PageContainer>
+      <A.HeroInfo />
       <A.CardContainer>
         <A.FlipCard src="icons/cm-card-comic1.jpg" alt="cm1" />
       </A.CardContainer>
