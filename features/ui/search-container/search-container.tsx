@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useRouter } from "next/router";
 import { Routes } from "@config/routes";
-import { Container, Input, LogoLink, Title } from "./search-container.style";
+import * as S from "./search-container.style";
 import Button from "@mui/material/Button";
 
 export function SearchContainer() {
@@ -15,24 +15,38 @@ export function SearchContainer() {
       query: { nameStartsWith: searchValue },
     });
   };
-  return (
-    <Container data-cy="search-container">
-      <LogoLink href={`${Routes.home}`} passHref>
-        <Title>Marvelous</Title>
-      </LogoLink>
-      <a href={`${Routes.characters}`}>Characters</a>
 
-      <form>
-        <Input type="search" placeholder="Search your hero..." ref={inputRef} />
+  const handleEnterPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSearchClick();
+    }
+  };
+  return (
+    <S.Container data-cy="search-container">
+      <S.LogoLink href={`${Routes.home}`} passHref>
+        <S.Title>Marvelous</S.Title>
+      </S.LogoLink>
+
+      <S.Form>
+        <S.Input
+          type="search"
+          placeholder="Search your hero..."
+          ref={inputRef}
+          onKeyDown={handleEnterPress}
+        />
 
         <Button
           onClick={handleSearchClick}
           variant="outlined"
-          style={{ color: "white", border: "1px solid white" }}
+          style={{
+            color: "white",
+            border: "1px solid white",
+          }}
         >
           Search
         </Button>
-      </form>
-    </Container>
+      </S.Form>
+    </S.Container>
   );
 }
