@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { HeaderName } from "@features";
 import Link from "next/link";
+import { HeaderName } from "../page-container";
 
 export const Container = styled.div`
   display: flex;
@@ -28,4 +28,33 @@ export const Title = styled(HeaderName)`
 export const LogoLink = styled(Link)`
   text-decoration: none;
   color: black;
+
+  @media (max-width: 52.125rem) {
+    margin-bottom: 0.5rem;
+  }
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 52.125rem) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+export const Input = styled.input`
+  background-color: #212529;
+  width: 20rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 0.6rem;
+  color: white;
+  margin-right: 0.5rem;
+
+  @media (max-width: 52.125rem) {
+    margin-bottom: 0.5rem;
+  }
 `;

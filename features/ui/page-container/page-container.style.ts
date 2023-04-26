@@ -14,6 +14,6 @@ export const Main = styled.main`
   padding: 2rem 10rem;
 
   @media (max-width: 52.125rem) {
-    padding: 0;
+    padding: 2rem 1rem;
   }
 `;

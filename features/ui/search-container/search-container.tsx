@@ -1,32 +1,52 @@
-import React from "react";
-import Link from "next/link";
-import styled from "styled-components";
+import React, { useRef } from "react";
+import { useRouter } from "next/router";
 import { Routes } from "@config/routes";
-import { Container, LogoLink, Title } from "./search-container.style";
-import { SearchBar } from "@features";
+import * as S from "./search-container.style";
+import Button from "@mui/material/Button";
 
-type SearchContainerProps = {
-  href: string;
-};
+export function SearchContainer() {
+  const router = useRouter();
+  const inputRef = useRef<HTMLInputElement>(null);
 
-const Hero = styled(Link)`
-  margin-left: 1rem;
-  text-decoration: none;
-  color: white;
+  const handleSearchClick = () => {
+    const searchValue = inputRef?.current?.value;
+    router.push({
+      pathname: Routes.characters,
+      query: { nameStartsWith: searchValue },
+    });
+  };
 
-  @media (max-width: 52.125rem) {
-    margin: 0.5rem 0;
-  }
-`;
-
-export function SearchContainer({ href }: SearchContainerProps) {
+  const handleEnterPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSearchClick();
+    }
+  };
   return (
-    <Container data-cy="search-container">
-      <LogoLink href={href} passHref>
-        <Title>Marvelous</Title>
-      </LogoLink>
-      <Hero href={Routes.hero}>Hero</Hero>
-      <SearchBar />
-    </Container>
+    <S.Container data-cy="search-container">
+      <S.LogoLink href={`${Routes.home}`} passHref>
+        <S.Title>Marvelous</S.Title>
+      </S.LogoLink>
+
+      <S.Form>
+        <S.Input
+          type="search"
+          placeholder="Search your hero..."
+          ref={inputRef}
+          onKeyDown={handleEnterPress}
+        />
+
+        <Button
+          onClick={handleSearchClick}
+          variant="outlined"
+          style={{
+            color: "white",
+            border: "1px solid white",
+          }}
+        >
+          Search
+        </Button>
+      </S.Form>
+    </S.Container>
   );
 }
