@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes } from "@config/routes";
-import Link from "next/link";
-import { Card, Image } from "./character.style";
+import { Card, ImageIcon, Anchor, Name } from "./character.style";
 
 type CharProps = {
   name: string;
@@ -13,13 +12,14 @@ type CharProps = {
 
 export function CharacterCard({ name, thumbnail }: CharProps) {
   return (
-    <Link href={`${Routes.hero}/`} passHref>
+    <Anchor href={`${Routes.hero}/`} passHref>
       <Card>
-        <Image
+        <ImageIcon
           src={`${thumbnail.path}/portrait_xlarge.${thumbnail.extension}`}
           alt={`${name}`}
         />
+        <Name>{name}</Name>
       </Card>
-    </Link>
+    </Anchor>
   );
 }
