@@ -1,1 +1,2 @@
-export * from "./api/use-characters";
+export * from "./api";
+export * from "./component/character-list";

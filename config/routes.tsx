@@ -1,5 +1,6 @@
 export const Routes = {
   home: "/",
-  hero: "/hero",
+  hero: "/hero-details",
   characters: "/characters",
+  characterList: "/character-list",
 };

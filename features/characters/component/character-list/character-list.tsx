@@ -7,6 +7,7 @@ export function CharacterList() {
   const router = useRouter();
   const searchHero = router.query.nameStartsWith as string;
   const { data, isLoading, isError, refetch } = useCharacters(searchHero);
+  const { results } = data?.data || {};
 
   useEffect(() => {
     refetch();
@@ -14,10 +15,8 @@ export function CharacterList() {
 
   if (isLoading) return <h2>Loading...</h2>;
   if (isError) return <h2>Search not found...</h2>;
-  if (!data?.data?.results?.length)
+  if (!results?.length)
     return <h2>Oops! Maybe {searchHero} is not a Marvel Hero. Try again...</h2>;
-
-  const { results } = data?.data || {};
   return (
     <>
       {results.map((item: any) => (
