@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import * as A from "@features";
 // import { useHero } from "@features/hero/api/use-hero";
 
-const HeroPage: NextPage = () => {
+const HeroDetailsPage: NextPage = () => {
   // const hero = useHero();
 
   return (
@@ -15,4 +15,4 @@ const HeroPage: NextPage = () => {
   );
 };
 
-export default HeroPage;
+export default HeroDetailsPage;

@@ -58,3 +58,16 @@ export const Input = styled.input`
     margin-bottom: 0.5rem;
   }
 `;
+
+export const NavItems = styled(Link)`
+  text-decoration: none;
+  color: white;
+
+  &:focus {
+    color: orange;
+  }
+
+  @media (max-width: 52.125rem) {
+    margin: 0.7rem;
+  }
+`;

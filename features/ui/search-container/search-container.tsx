@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import { useRouter } from "next/router";
 import { Routes } from "@config/routes";
 import * as S from "./search-container.style";
+import { useRouter } from "next/router";
 import Button from "@mui/material/Button";
 
 export function SearchContainer() {
@@ -10,6 +10,7 @@ export function SearchContainer() {
 
   const handleSearchClick = () => {
     const searchValue = inputRef?.current?.value;
+
     router.push({
       pathname: Routes.characters,
       query: { nameStartsWith: searchValue },
@@ -27,6 +28,8 @@ export function SearchContainer() {
       <S.LogoLink href={`${Routes.home}`} passHref>
         <S.Title>Marvelous</S.Title>
       </S.LogoLink>
+
+      <S.NavItems href={`${Routes.characterList}`}>Character A-Z</S.NavItems>
 
       <S.Form>
         <S.Input
