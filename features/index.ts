@@ -5,3 +5,4 @@ export * from "./ui/search-container";
 export * from "./ui/card";
 export * from "./ui/button";
 export * from "./characters";
+export * from "./complete-list";
