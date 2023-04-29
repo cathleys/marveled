@@ -30,7 +30,7 @@ export const InfoContainer = styled.div`
   background-color: white;
   box-shadow: -1px 33px 58px -23px rgba(0, 0, 0, 0.36);
 `;
-export const Name = styled.h3``;
+export const HeroName = styled.h3``;
 export const CommercialStick = styled.div`
   display: flex;
   flex-wrap: wrap;

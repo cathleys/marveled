@@ -8,7 +8,7 @@ export function HeroInfo() {
         <A.Image src="icons/cm-card-comic1.jpg" alt="cm1" />
 
         <A.InfoContainer>
-          <A.Name>Hulk</A.Name>
+          <A.HeroName>Hulk</A.HeroName>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora
             laudantium praesentium ullam quia! Eveniet iusto itaque tempore
