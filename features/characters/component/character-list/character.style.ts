@@ -1,5 +1,5 @@
-import Link from "next/link";
 import styled from "styled-components";
+import Link from "next/link";
 
 export const Grid = styled.div`
   display: grid;
@@ -8,6 +8,7 @@ export const Grid = styled.div`
   gap: 1.5rem;
 `;
 export const Card = styled.div`
+  width: 10.875rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
