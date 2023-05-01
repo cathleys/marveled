@@ -1,6 +1,6 @@
 import * as H from "@features";
 
-export default function Home() {
+const HomePage = () => {
   return (
     <>
       <H.PageContainer>
@@ -19,4 +19,6 @@ export default function Home() {
       </H.PageContainer>
     </>
   );
-}
+};
+
+export default HomePage;
