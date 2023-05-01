@@ -1,36 +1,50 @@
 import styled from "styled-components";
+import { ImageIcon } from "@features/characters";
 
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
 
   @media (max-width: 52rem) {
     justify-content: center;
     padding: 1rem;
   }
 `;
-export const Image = styled.img`
-  width: 17.5rem;
-  height: 17rem;
+export const Image = styled(ImageIcon)`
   border: 3px solid black;
   background-color: white;
   border-radius: 0.5rem;
-  margin-bottom: 1rem;
+  width: 255px;
   box-shadow: -1px 33px 58px -23px rgba(0, 0, 0, 0.36);
+
+  @media (max-width: 52rem) {
+    margin-bottom: 1.5rem;
+  }
+`;
+
+export const HeroName = styled.h3``;
+export const Description = styled.p``;
+export const Attribution = styled.p`
+  color: #6d5d6e;
+  margin: 0.5rem 0 0 0;
 `;
 
 export const InfoContainer = styled.div`
-  padding: 0 1.5rem 0;
+  padding: 1rem 0 0 0;
   max-width: 42rem;
   border: 3px solid black;
   border-radius: 0.5rem;
   background-color: white;
   box-shadow: -1px 33px 58px -23px rgba(0, 0, 0, 0.36);
+
+  ${HeroName}, ${Description} {
+    padding: 0 1rem;
+  }
 `;
-export const HeroName = styled.h3``;
+
 export const CommercialStick = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -45,6 +59,7 @@ export const CommercialStick = styled.div`
   padding: 1rem;
   margin-top: 2rem;
   box-shadow: -1px 33px 58px -23px rgba(0, 0, 0, 0.36);
+
   @media (max-width: 52rem) {
     height: 6rem;
     margin: 1rem;
@@ -57,7 +72,7 @@ export const Meanwhile = styled.div`
   height: 2rem;
   width: 7rem;
   padding-top: 0.5rem;
-  border: 1px solid black;
+  border: 2px solid black;
   border-left: transparent;
   border-top-left-radius: 0.5rem;
   background-color: #fffacd;

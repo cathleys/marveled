@@ -16,15 +16,12 @@ export function CharacterList() {
   if (isLoading) return <h2>Loading...</h2>;
   if (isError) return <h2>Search not found...</h2>;
   if (!results?.length)
-    return <h2>Oops! Maybe {searchHero} is not a Marvel Hero. Try again...</h2>;
+    return <h2>Oops! Check {searchHero} spelling or try other hero again.</h2>;
+
   return (
     <>
-      {results.map((item: any) => (
-        <CharacterCard
-          key={item.id}
-          name={item.name}
-          thumbnail={item.thumbnail}
-        />
+      {results?.map((character: any) => (
+        <CharacterCard key={character.id} {...character} />
       ))}
     </>
   );

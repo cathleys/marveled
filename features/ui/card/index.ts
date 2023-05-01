@@ -1,1 +1,1 @@
-export { FlipCard } from "./flip-card";
+export * from "./flip-card.style";

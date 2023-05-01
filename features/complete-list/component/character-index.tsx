@@ -26,12 +26,8 @@ export function CharacterIndex() {
   return (
     <>
       <G.Grid>
-        {results?.map((item: any) => (
-          <G.CharacterCard
-            key={item.id}
-            name={item.name}
-            thumbnail={item.thumbnail}
-          />
+        {results?.map((character: any) => (
+          <G.CharacterCard key={character.id} {...character} />
         ))}
       </G.Grid>
 
