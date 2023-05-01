@@ -33,6 +33,7 @@ export function SearchContainer() {
 
       <S.Form>
         <S.Input
+          data-cy="search-bar"
           type="search"
           placeholder="Search your hero..."
           ref={inputRef}
@@ -40,6 +41,7 @@ export function SearchContainer() {
         />
 
         <Button
+          data-cy="search-button"
           onClick={handleSearchClick}
           variant="outlined"
           style={{
