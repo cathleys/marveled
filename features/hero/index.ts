@@ -1,2 +1,4 @@
+export * from "./api/use-hero";
 export * from "./hero-page.style";
-export { HeroInfo } from "./component/hero-info";
+export * from "./component/flip-card";
+export * from "./component/hero-detail";
