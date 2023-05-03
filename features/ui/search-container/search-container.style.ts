@@ -11,7 +11,7 @@ export const Container = styled.div`
   min-height: 3.5rem;
   background-color: #343a40;
 
-  @media (max-width: 52.125rem) {
+  @media (max-width: 64em) {
     justify-content: center;
     flex-direction: column;
     padding: 1rem 0;
@@ -29,7 +29,7 @@ export const LogoLink = styled(Link)`
   text-decoration: none;
   color: black;
 
-  @media (max-width: 52.125rem) {
+  @media (max-width: 64em) {
     margin-bottom: 0.5rem;
   }
 `;
@@ -38,7 +38,7 @@ export const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
 
-  @media (max-width: 52.125rem) {
+  @media (max-width: 64em) {
     flex-direction: column;
     align-items: center;
   }
@@ -54,7 +54,7 @@ export const Input = styled.input`
   color: white;
   margin-right: 0.5rem;
 
-  @media (max-width: 52.125rem) {
+  @media (max-width: 64em) {
     margin-bottom: 0.5rem;
   }
 `;
@@ -67,7 +67,7 @@ export const NavItems = styled(Link)`
     color: orange;
   }
 
-  @media (max-width: 52.125rem) {
+  @media (max-width: 64em) {
     margin: 0.7rem;
   }
 `;

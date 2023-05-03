@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card, ImageIcon, Name, Anchor } from "./character.style";
 import { Routes } from "@config/routes";
+import { ThemeContext } from "@features";
 
 type CharProps = {
   id: number;
@@ -12,6 +13,7 @@ type CharProps = {
 };
 
 export function CharacterCard({ id, name, thumbnail }: CharProps) {
+  const { isDarkMode } = useContext(ThemeContext);
   return (
     <Anchor
       href={{
@@ -19,12 +21,12 @@ export function CharacterCard({ id, name, thumbnail }: CharProps) {
         query: { id: id },
       }}
     >
-      <Card>
+      <Card isDark={isDarkMode}>
         <ImageIcon
-          src={`${thumbnail.path}.${thumbnail.extension}`}
+          src={`${thumbnail.path}/portrait_xlarge.${thumbnail.extension}`}
           alt={`${name}`}
         />
-        <Name>{name}</Name>
+        <Name isDark={isDarkMode}>{name}</Name>
       </Card>
     </Anchor>
   );

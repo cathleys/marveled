@@ -1,12 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { Routes } from "@config/routes";
 import * as S from "./search-container.style";
 import { useRouter } from "next/router";
 import Button from "@mui/material/Button";
+import Switch from "@mui/material/Switch";
+import { ThemeContext } from "@features";
 
 export function SearchContainer() {
   const router = useRouter();
+  const { isDarkMode, toggleColorMode } = useContext(ThemeContext);
   const inputRef = useRef<HTMLInputElement>(null);
+  const label = { inputProps: { "aria-label": "dark mode" } };
 
   const handleSearchClick = () => {
     const searchValue = inputRef?.current?.value;
@@ -23,13 +27,14 @@ export function SearchContainer() {
       handleSearchClick();
     }
   };
+
   return (
     <S.Container data-cy="search-container">
       <S.LogoLink href={`${Routes.home}`} passHref>
-        <S.Title>Marvelous</S.Title>
+        <S.Title isDark={isDarkMode}>Marvelous</S.Title>
       </S.LogoLink>
 
-      <S.NavItems href={`${Routes.characterList}`}>Character A-Z</S.NavItems>
+      <S.NavItems href={`${Routes.characterList}`}>Characters A-Z</S.NavItems>
 
       <S.Form>
         <S.Input
@@ -52,6 +57,7 @@ export function SearchContainer() {
           Search
         </Button>
       </S.Form>
+      <Switch {...label} onClick={() => toggleColorMode()} />
     </S.Container>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as A from "@features";
 type HeroDetailsProps = {
   name: string;
@@ -15,15 +15,17 @@ export function HeroInfo({
   attributionText,
   thumbnail,
 }: HeroDetailsProps) {
+  const { isDarkMode } = useContext(A.ThemeContext);
   return (
     <>
       <A.Container>
         <A.Image
+          isDark={isDarkMode}
           src={`${thumbnail.path}.${thumbnail.extension}`}
           alt={`${name}`}
         />
 
-        <A.InfoContainer>
+        <A.InfoContainer isDark={isDarkMode}>
           <A.HeroName>{name}</A.HeroName>
           <A.Description>{description}</A.Description>
           <A.ButtonWrapper style={{ paddingLeft: "1rem" }}>

@@ -15,9 +15,9 @@ export const Wrapper = styled.div`
   background: #343a40;
 `;
 
-export const List = styled.a`
+export const List = styled.a<{ isDark: boolean }>`
   text-decoration: none;
-
+  color: ${({ isDark }) => (isDark ? "#F1F1F1" : "#332c39")};
   cursor: pointer;
 `;
 export const AnchorTag = styled.a`
@@ -36,21 +36,26 @@ export const DisabledAnchorTag = styled(AnchorTag)`
   pointer-events: none;
 `;
 
-export const NameContainer = styled.div`
+export const NameContainer = styled.div<{ isDark: boolean }>`
   display: grid;
   grid-template-columns: repeat(2, 1fr); // Set the number of columns to 2
   grid-gap: 10px;
-  background: #f6ffde;
+  background: ${({ isDark }) => (isDark ? "#222" : "white")};
   padding: 2rem;
-  border: 3px solid #393646;
+  border: 3px solid ${({ isDark }) => (isDark ? "#F1F1F1" : "#332c39")};
   border-radius: 0.625rem;
   box-shadow: -1px 33px 58px -23px rgba(0, 0, 0, 0.36);
   font-size: 1.5rem;
   font-weight: bold;
-  color: #332c39;
+  color: ${({ isDark }) => (isDark ? "#F1F1F1" : "#332c39")};
 
-  @media (max-width: 52.125rem) {
+  @media (max-width: 64em) {
     font-size: 1rem;
     padding: 0.5rem;
   }
+`;
+
+export const AZHeader = styled.h1<{ isDark: boolean }>`
+  margin-top: 2rem;
+  color: ${({ isDark }) => (isDark ? "#F1F1F1" : "#332c39")};
 `;
