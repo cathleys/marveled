@@ -4,6 +4,8 @@ import * as G from "@features";
 import { AZ } from "./a-z-letters";
 import * as C from "./character-index.style";
 import { Character } from "@features/characters/api/character-names";
+import Link from "next/link";
+import { Routes } from "@config/routes";
 
 export function CharacterIndex() {
   const { isDarkMode } = useContext(G.ThemeContext);
@@ -60,9 +62,16 @@ export function CharacterIndex() {
           <C.NameContainer isDark={isDarkMode}>
             {filterNames(G.characterNames, `${letter}`).map(
               (character: Character) => (
-                <C.List isDark={isDarkMode} key={character.name}>
-                  {character.name}
-                </C.List>
+                <Link
+                  key={character.name}
+                  href={{
+                    pathname: Routes.characters,
+                    query: { nameStartsWith: character.name },
+                  }}
+                  style={{ textDecoration: "none" }}
+                >
+                  <C.List isDark={isDarkMode}>{character.name}</C.List>
+                </Link>
               )
             )}
           </C.NameContainer>

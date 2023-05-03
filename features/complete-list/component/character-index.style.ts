@@ -19,6 +19,10 @@ export const List = styled.a<{ isDark: boolean }>`
   text-decoration: none;
   color: ${({ isDark }) => (isDark ? "#F1F1F1" : "#332c39")};
   cursor: pointer;
+
+  &:hover {
+    color: orange;
+  }
 `;
 export const AnchorTag = styled.a`
   text-decoration: none;
