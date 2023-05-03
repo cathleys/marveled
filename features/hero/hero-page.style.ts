@@ -84,6 +84,7 @@ export const InfoText = styled.p<{ isDark: boolean }>`
   font-size: 1.625rem;
   font-weight: bold;
   color: ${({ isDark }) => (isDark ? "#F1F1F1" : "#332c39")};
+  cursor: pointer;
 
   @media (max-width: 64em) {
     font-size: 1rem;
@@ -102,6 +103,7 @@ export const InfoContainer = styled.div<{ isDark: boolean }>`
   max-width: 42rem;
   border: 3px solid black;
   border-radius: 0.5rem;
+
   background: ${({ isDark }) => (isDark ? "#222" : "white")};
   box-shadow: ${({ isDark }) =>
     isDark
@@ -117,4 +119,13 @@ export const InfoContainer = styled.div<{ isDark: boolean }>`
   ${Attribution} {
     color: ${({ isDark }) => (isDark ? "#F1F1F1" : "#332c39")};
   }
+`;
+
+export const FreeComicList = styled.div<{ isDark: boolean }>`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: ${({ isDark }) => (isDark ? "#222" : "white")};
 `;

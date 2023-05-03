@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import * as A from "@features";
 import { HeroInfo } from "./hero-info";
 import { useRouter } from "next/router";
 import { useHero } from "@features/hero/api";
+import { Link, Tooltip } from "@mui/material";
 
 export function HeroInfoList() {
   const router = useRouter();
   const { id } = router.query;
   const { data, isLoading, isError } = useHero(Number(id));
+  const [showLinks, setShowLinks] = useState(false);
   const { isDarkMode } = useContext(A.ThemeContext);
 
   if (isLoading) {
@@ -28,15 +30,42 @@ export function HeroInfoList() {
           attributionText={`${attributionText}`}
         />
       ))}
+      <Tooltip title="Click me" placement="top" arrow>
+        <A.CommercialStick
+          isDark={isDarkMode}
+          onClick={() => setShowLinks(!showLinks)}
+        >
+          <A.Meanwhile>
+            <A.Text>Meanwhile...</A.Text>
+          </A.Meanwhile>
 
-      <A.CommercialStick isDark={isDarkMode}>
-        <A.Meanwhile>
-          <A.Text>Meanwhile...</A.Text>
-        </A.Meanwhile>
-        <A.InfoText isDark={isDarkMode}>
-          A secret... It’s more FUN when you read comics for FREE!
-        </A.InfoText>
-      </A.CommercialStick>
+          <A.InfoText isDark={isDarkMode}>
+            A secret... It’s more FUN when you read comics for FREE!
+          </A.InfoText>
+        </A.CommercialStick>
+      </Tooltip>
+
+      {showLinks && (
+        <A.FreeComicList isDark={isDarkMode}>
+          <Link
+            underline="hover"
+            style={{ color: "#ccc" }}
+            href={"https://readallcomics.com/"}
+            target="_black"
+          >
+            Read All Comics
+          </Link>
+
+          <Link
+            underline="hover"
+            style={{ color: "#ccc" }}
+            href={"https://comiconlinefree.net/"}
+            target="_black"
+          >
+            Comic Online FREE
+          </Link>
+        </A.FreeComicList>
+      )}
 
       <A.CardContainer>
         <A.FlipCardList />
