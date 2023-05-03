@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as A from "@features";
 import { HeroInfo } from "./hero-info";
 import { useRouter } from "next/router";
@@ -8,6 +8,7 @@ export function HeroInfoList() {
   const router = useRouter();
   const { id } = router.query;
   const { data, isLoading, isError } = useHero(Number(id));
+  const { isDarkMode } = useContext(A.ThemeContext);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -28,11 +29,11 @@ export function HeroInfoList() {
         />
       ))}
 
-      <A.CommercialStick>
+      <A.CommercialStick isDark={isDarkMode}>
         <A.Meanwhile>
           <A.Text>Meanwhile...</A.Text>
         </A.Meanwhile>
-        <A.InfoText>
+        <A.InfoText isDark={isDarkMode}>
           A secret... It’s more FUN when you read comics for FREE!
         </A.InfoText>
       </A.CommercialStick>

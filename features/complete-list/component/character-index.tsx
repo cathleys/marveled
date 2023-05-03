@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useCompleteCharacters } from "../api/use-complete-characters";
 import * as G from "@features";
 import { AZ } from "./a-z-letters";
@@ -6,6 +6,7 @@ import * as C from "./character-index.style";
 import { Character } from "@features/characters/api/character-names";
 
 export function CharacterIndex() {
+  const { isDarkMode } = useContext(G.ThemeContext);
   const { data, isLoading, isError, error } = useCompleteCharacters();
 
   //function that filters array by first letter
@@ -31,7 +32,7 @@ export function CharacterIndex() {
         ))}
       </G.Grid>
 
-      <h1 style={{ marginTop: "2rem" }}>Character Index A-Z</h1>
+      <C.AZHeader isDark={isDarkMode}>Character Index A-Z</C.AZHeader>
       <C.Wrapper>
         {AZ.map((letter, index) => {
           const hasNames = G.characterNames.some((character) =>
@@ -53,11 +54,15 @@ export function CharacterIndex() {
 
       {AZ.map((letter, index) => (
         <div key={index}>
-          <h1 id={`${letter}`}>{letter}</h1>
-          <C.NameContainer>
+          <C.AZHeader isDark={isDarkMode} id={`${letter}`}>
+            {letter}
+          </C.AZHeader>
+          <C.NameContainer isDark={isDarkMode}>
             {filterNames(G.characterNames, `${letter}`).map(
               (character: Character) => (
-                <C.List key={character.name}>{character.name}</C.List>
+                <C.List isDark={isDarkMode} key={character.name}>
+                  {character.name}
+                </C.List>
               )
             )}
           </C.NameContainer>

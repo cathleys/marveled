@@ -2,20 +2,27 @@ import styled from "styled-components";
 import Link from "next/link";
 
 export const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-auto-rows: auto;
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 `;
-export const Card = styled.div`
+export const Card = styled.div<{ isDark: boolean }>`
   width: 10.875rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: #f6ffde;
+  background: ${({ isDark }) => (isDark ? "#222" : "white")};
+  border: ${({ isDark }) => (isDark ? "1px solid #4f4557" : "none")};
   border-radius: 0.75rem;
   overflow: hidden;
-  box-shadow: -1px 33px 58px -23px rgba(0, 0, 0, 0.36);
+  box-shadow: ${({ isDark }) =>
+    isDark
+      ? "0px 50px 55px -51px rgba(148, 145, 148, 0.95)"
+      : "-1px 33px 58px -23px rgba(0, 0, 0, 0.36)"};
+
   object-fit: cover;
   padding: 0.5rem;
 
@@ -33,6 +40,6 @@ export const Anchor = styled(Link)`
   color: white;
 `;
 
-export const Name = styled.h4`
-  color: #4f4557;
+export const Name = styled.h4<{ isDark: boolean }>`
+  color: ${({ isDark }) => (isDark ? "#F1F1F1" : "#332c39")};
 `;
