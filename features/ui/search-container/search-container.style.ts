@@ -45,7 +45,7 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  background-color: #212529;
+  background: #212529 url(/icons/search-icon.svg) no-repeat right 0.7rem center;
   width: 20rem;
   border: none;
   outline: none;
