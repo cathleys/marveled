@@ -3,4 +3,5 @@ export const Routes = {
   heroDetails: "/hero-details/[id]",
   characters: "/characters",
   characterList: "/character-list",
+  comics: "/comics",
 };
