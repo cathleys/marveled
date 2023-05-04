@@ -4,6 +4,7 @@ const HomePage = () => {
   return (
     <>
       <H.PageContainer>
+        <H.TitleFlag text="Featured Hero" />
         <H.HomeBanner />
         <H.HeroPageCardContainer>
           {H.homeCards.map((card, index) => (
