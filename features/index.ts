@@ -5,5 +5,5 @@ export * from "./ui/loading-spinner";
 export * from "./ui/button";
 export * from "./home";
 export * from "./hero";
-export * from "./complete-list";
+export * from "./characters-list";
 export * from "./characters";
