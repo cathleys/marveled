@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
-import * as A from "@features";
-import { HeroInfo } from "./hero-info";
+import { Link, Tooltip, Collapse } from "@mui/material";
 import { useRouter } from "next/router";
 import { useHero } from "@features/hero/api";
-import { Link, Tooltip, Collapse } from "@mui/material";
+import { HeroInfo } from "./hero-info";
+import * as A from "@features";
 
 export function HeroInfoList() {
   const router = useRouter();
@@ -12,12 +12,9 @@ export function HeroInfoList() {
   const [showLinks, setShowLinks] = useState(false);
   const { isDarkMode } = useContext(A.ThemeContext);
 
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-  if (isError) {
-    return <p>Error</p>;
-  }
+  if (isLoading) return <A.LoadingSpinner />;
+
+  if (isError) return <p>Error</p>;
 
   const { attributionText } = data || {};
   const { results } = data?.data || {};

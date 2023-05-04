@@ -12,5 +12,5 @@ async function getCharacters(name: string) {
 }
 
 export function useCharacters(name: string) {
-  return useQuery("characters", () => getCharacters(name));
+  return useQuery(["characters", name], () => getCharacters(name));
 }

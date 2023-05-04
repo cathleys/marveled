@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { useCompleteCharacters } from "../api/use-complete-characters";
-import * as G from "@features";
-import { AZ } from "./a-z-letters";
-import * as C from "./character-index.style";
-import { Character } from "@features/characters/api/character-names";
 import Link from "next/link";
 import { Routes } from "@config/routes";
+import { useCompleteCharacters } from "../api/use-complete-characters";
+import { Character } from "@features/characters/api/character-names";
+import * as C from "./character-index.style";
+import { AZ } from "./a-z-letters";
+import * as G from "@features";
 
 export function CharacterIndex() {
   const { isDarkMode } = useContext(G.ThemeContext);
@@ -17,7 +17,7 @@ export function CharacterIndex() {
       element.name.toLowerCase().startsWith(query.toLowerCase())
     );
 
-  if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading) return <G.LoadingSpinner />;
 
   if (isError) {
     console.error(error);
