@@ -3,7 +3,7 @@ import * as A from "@features";
 import { HeroInfo } from "./hero-info";
 import { useRouter } from "next/router";
 import { useHero } from "@features/hero/api";
-import { Link, Tooltip } from "@mui/material";
+import { Link, Tooltip, Collapse } from "@mui/material";
 
 export function HeroInfoList() {
   const router = useRouter();
@@ -45,11 +45,11 @@ export function HeroInfoList() {
         </A.CommercialStick>
       </Tooltip>
 
-      {showLinks && (
-        <A.FreeComicList isDark={isDarkMode}>
+      <A.FreeComicList isDark={isDarkMode}>
+        <Collapse in={showLinks}>
           <Link
             underline="hover"
-            style={{ color: "#ccc" }}
+            style={{ display: "inline-flex", padding: "1rem" }}
             href={"https://readallcomics.com/"}
             target="_black"
           >
@@ -58,14 +58,14 @@ export function HeroInfoList() {
 
           <Link
             underline="hover"
-            style={{ color: "#ccc" }}
+            style={{ display: "inline-flex", padding: "1rem" }}
             href={"https://comiconlinefree.net/"}
             target="_black"
           >
             Comic Online FREE
           </Link>
-        </A.FreeComicList>
-      )}
+        </Collapse>
+      </A.FreeComicList>
 
       <A.CardContainer>
         <A.FlipCardList />

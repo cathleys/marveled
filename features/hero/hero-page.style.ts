@@ -67,7 +67,6 @@ export const CommercialStick = styled.div<{ isDark: boolean }>`
 
   @media (max-width: 64em) {
     height: 6rem;
-    margin: 1rem;
   }
 `;
 
@@ -124,8 +123,7 @@ export const InfoContainer = styled.div<{ isDark: boolean }>`
 export const FreeComicList = styled.div<{ isDark: boolean }>`
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  padding: 1rem;
+  justify-content: center;
   border-radius: 0.5rem;
   background: ${({ isDark }) => (isDark ? "#222" : "white")};
 `;
