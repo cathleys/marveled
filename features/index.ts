@@ -1,6 +1,7 @@
 export * from "./ui/page-container";
 export * from "./ui/search-container";
 export * from "./ui/theme-provider";
+export * from "./ui/loading-spinner";
 export * from "./ui/button";
 export * from "./home";
 export * from "./hero";

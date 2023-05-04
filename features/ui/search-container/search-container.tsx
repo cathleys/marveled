@@ -57,7 +57,7 @@ export function SearchContainer() {
           Search
         </Button>
       </S.Form>
-      <Switch {...label} onClick={() => toggleColorMode()} />
+      <Switch {...label} color="warning" onClick={() => toggleColorMode()} />
     </S.Container>
   );
 }

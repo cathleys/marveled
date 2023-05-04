@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 import { useCharacters } from "@features/characters/api/use-characters";
 import { CharacterCard } from "./character-card";
-import { useRouter } from "next/router";
+import { LoadingSpinner } from "@features";
 
 export function CharacterList() {
   const router = useRouter();
@@ -13,8 +14,10 @@ export function CharacterList() {
     refetch();
   }, [searchHero, refetch]);
 
-  if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading) return <LoadingSpinner />;
+
   if (isError) return <h2>Search not found...</h2>;
+
   if (!results?.length)
     return <h2>Oops! Check {searchHero} spelling or try other hero again.</h2>;
 

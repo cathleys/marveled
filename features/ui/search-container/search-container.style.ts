@@ -45,12 +45,12 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  background: #212529 url(/icons/search-icon.svg) no-repeat right 0.7rem center;
+  background: #212529 url(/icons/search-icon.svg) no-repeat left 0.7rem center;
   width: 20rem;
   border: none;
   outline: none;
   border-radius: 8px;
-  padding: 0.6rem;
+  padding: 0.6rem 0.6rem 0.6rem 2rem;
   color: white;
   margin-right: 0.5rem;
 
