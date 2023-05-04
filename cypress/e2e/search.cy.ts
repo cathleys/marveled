@@ -4,7 +4,7 @@ describe("Search results", () => {
     cy.get("header").find('[data-cy="h1"]').should("be.visible");
 
     cy.get('[data-cy="search-container"]')
-      .contains("Marvelous")
+      .contains("Marveled")
       .should("be.visible")
       .click();
 

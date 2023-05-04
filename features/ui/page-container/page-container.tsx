@@ -14,7 +14,7 @@ export function PageContainer({ children }: PageProps) {
   return (
     <>
       <Head>
-        <title>Marvelous</title>
+        <title>Marveled</title>
         <meta name="description" content="Marvel Hero Search" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

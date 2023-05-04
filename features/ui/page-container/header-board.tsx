@@ -57,7 +57,7 @@ export default function HeaderBoard() {
   return (
     <Skyline isDark={isDarkMode}>
       <HeaderName isDark={isDarkMode} data-cy="h1">
-        MARVELOUS
+        MARVELED
       </HeaderName>
     </Skyline>
   );

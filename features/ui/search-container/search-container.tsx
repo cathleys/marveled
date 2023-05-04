@@ -31,7 +31,7 @@ export function SearchContainer() {
   return (
     <S.Container data-cy="search-container">
       <S.LogoLink href={`${Routes.home}`} passHref>
-        <S.Title isDark={isDarkMode}>Marvelous</S.Title>
+        <S.Title isDark={isDarkMode}>Marveled</S.Title>
       </S.LogoLink>
 
       <S.NavItems href={`${Routes.characterList}`}>Characters A-Z</S.NavItems>
