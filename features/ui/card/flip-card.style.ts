@@ -10,25 +10,25 @@ export const Container = styled.div`
 export const TitleAndTextWrapper = styled.div`
   padding: 1rem;
 `;
-export const FrontCardWrapper = styled.div`
+export const FrontCardWrapper = styled.div<{ isDark: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 3px solid black;
+  border: ${({ isDark }) => (isDark ? "3px solid #f1f1f1" : "3px solid black")};
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+  overflow: hidden;
   box-shadow: 0px 50px 55px -51px rgba(148, 145, 148, 0.95);
 `;
 export const FrontCard = styled.img`
-  width: 15.125rem;
   height: 100%;
 `;
 export const BackCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 15.125rem;
-  height: 23rem;
+  width: 18.75rem;
+  height: 28.125rem;
   margin-bottom: 1rem;
   background: white;
   border: 3px solid black;

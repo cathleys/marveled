@@ -1,6 +1,6 @@
-import React, { SyntheticEvent, useState } from "react";
+import React, { SyntheticEvent, useState, useContext } from "react";
 import ReactCardFlip from "react-card-flip";
-import { ButtonWrapper, PageButton } from "@features";
+import { ButtonWrapper, PageButton, ThemeContext } from "@features";
 import * as F from "@features/ui/card/flip-card.style";
 
 type FlipCardProps = {
@@ -18,7 +18,7 @@ export function FlipCard({
   thumbnail,
 }: FlipCardProps) {
   const [isHovered, setIsHovered] = useState(false);
-
+  const { isDarkMode } = useContext(ThemeContext);
   const handleMouseOver = (e: SyntheticEvent) => {
     e.preventDefault();
     setIsHovered(!isHovered);
@@ -28,9 +28,9 @@ export function FlipCard({
     <>
       <F.Container>
         <ReactCardFlip isFlipped={isHovered} flipDirection="horizontal">
-          <F.FrontCardWrapper onMouseOver={handleMouseOver}>
+          <F.FrontCardWrapper isDark={isDarkMode} onMouseOver={handleMouseOver}>
             <F.FrontCard
-              src={`${thumbnail.path}.${thumbnail.extension}`}
+              src={`${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`}
               alt={`${variantDescription}`}
             />
           </F.FrontCardWrapper>

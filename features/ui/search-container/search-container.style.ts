@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10rem;
+  padding: 0 7rem;
   min-height: 3.5rem;
   background-color: #343a40;
 
@@ -59,14 +59,7 @@ export const Input = styled.input`
   }
 `;
 
-export const NavItems = styled(Link)`
-  text-decoration: none;
-  color: white;
-
-  &:focus {
-    color: orange;
-  }
-
+export const NavItems = styled.nav`
   @media (max-width: 64em) {
     margin: 0.7rem;
   }

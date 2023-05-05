@@ -2,12 +2,11 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { key, hash } from "@config/keys";
 
-async function getCharacters(name: string) {
+async function getComicsList() {
   const { data } = await axios.get(
-    "https://gateway.marvel.com/v1/public/characters",
+    "https://gateway.marvel.com/v1/public/comics",
     {
       params: {
-        nameStartsWith: name,
         ts: "1",
         apikey: key,
         hash: hash,
@@ -17,6 +16,6 @@ async function getCharacters(name: string) {
   return data;
 }
 
-export function useCharacters(name: string) {
-  return useQuery(["characters", name], () => getCharacters(name));
+export function useComicsList() {
+  return useQuery(["comics list"], getComicsList);
 }

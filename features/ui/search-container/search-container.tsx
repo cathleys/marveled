@@ -1,10 +1,9 @@
 import React, { useRef, useContext } from "react";
 import { Routes } from "@config/routes";
-import * as S from "./search-container.style";
 import { useRouter } from "next/router";
-import Button from "@mui/material/Button";
-import Switch from "@mui/material/Switch";
-import { ThemeContext } from "@features";
+import { Button, Switch } from "@mui/material";
+import { CustomLink, ThemeContext } from "@features";
+import * as S from "./search-container.style";
 
 export function SearchContainer() {
   const router = useRouter();
@@ -31,10 +30,13 @@ export function SearchContainer() {
   return (
     <S.Container data-cy="search-container">
       <S.LogoLink href={`${Routes.home}`} passHref>
-        <S.Title isDark={isDarkMode}>Marvelous</S.Title>
+        <S.Title isDark={isDarkMode}>Marveled</S.Title>
       </S.LogoLink>
 
-      <S.NavItems href={`${Routes.characterList}`}>Characters A-Z</S.NavItems>
+      <S.NavItems>
+        <CustomLink href={`${Routes.characterList}`} label="Characters A-Z" />
+        <CustomLink href={`${Routes.comics}`} label="Comics" />
+      </S.NavItems>
 
       <S.Form>
         <S.Input
