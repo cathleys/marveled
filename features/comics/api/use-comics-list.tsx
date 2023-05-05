@@ -1,8 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-
-const key = "207b830184c8de5036a41f859fbda02b";
-const hashkey = "456c6321c6d5612de2d76c71e0f07015";
+import { key, hash } from "@config/keys";
 
 async function getComicsList() {
   const { data } = await axios.get(
@@ -11,7 +9,7 @@ async function getComicsList() {
       params: {
         ts: "1",
         apikey: key,
-        hash: hashkey,
+        hash: hash,
       },
     }
   );
@@ -19,5 +17,5 @@ async function getComicsList() {
 }
 
 export function useComicsList() {
-  return useQuery(["comics list"], () => getComicsList());
+  return useQuery(["comics list"], getComicsList);
 }
