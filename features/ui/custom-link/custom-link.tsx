@@ -13,7 +13,7 @@ const Anchor = styled(Link)`
   padding: 0 0.5rem;
 
   &:focus {
-    color: orange;
+    color: #f2c94d;
   }
 `;
 export function CustomLink({ href, label }: CustomLinkProps) {

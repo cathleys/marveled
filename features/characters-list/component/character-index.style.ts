@@ -15,13 +15,13 @@ export const Wrapper = styled.div`
   background: #343a40;
 `;
 
-export const List = styled.a<{ isDark: boolean }>`
-  text-decoration: none;
+export const List = styled.li<{ isDark: boolean }>`
+  list-style-type: none;
   color: ${({ isDark }) => (isDark ? "#F1F1F1" : "#332c39")};
   cursor: pointer;
 
   &:hover {
-    color: orange;
+    color: #f2c94d;
   }
 `;
 export const AnchorTag = styled.a`
@@ -31,7 +31,7 @@ export const AnchorTag = styled.a`
   padding: 0.5rem;
 
   &:hover {
-    color: orange;
+    color: #f2c94d;
   }
 `;
 
