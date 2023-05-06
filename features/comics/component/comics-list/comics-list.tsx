@@ -1,5 +1,5 @@
 import React from "react";
-import { useComicsList } from "../api";
+import { useComicsList } from "../../api";
 import * as C from "@features";
 
 export function ComicsList() {
