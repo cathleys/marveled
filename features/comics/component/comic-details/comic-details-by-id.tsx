@@ -76,6 +76,7 @@ export function ComicDetailsById({
   prices,
   creators,
   attributionText,
+  copyright,
   series,
 }: ComicDetailsProps) {
   const [{ price }] = prices;
@@ -107,6 +108,7 @@ export function ComicDetailsById({
           </div>
         </Wrapper>
         <Attribution>{attributionText}</Attribution>
+        <Attribution>Copyright {copyright}</Attribution>
       </ComicStyle>
       <AdditionalDetails>
         <SubComicTitle>Promotional Covers</SubComicTitle>

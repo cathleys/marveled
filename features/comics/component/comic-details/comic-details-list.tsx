@@ -9,7 +9,7 @@ export function ComicDetailsList() {
   const { comicId } = router.query;
   const { data, isLoading, isError } = useComicsById(Number(comicId));
   const { results } = data?.data || {};
-  const { attributionText } = data || {};
+  const { attributionText, copyright } = data || {};
 
   if (isLoading) return <LoadingSpinner />;
   if (isError) return <div>error</div>;
@@ -20,6 +20,7 @@ export function ComicDetailsList() {
           key={comic.id}
           {...comic}
           attributionText={attributionText}
+          copyright={copyright}
         />
       ))}
     </>
