@@ -4,13 +4,14 @@ import Link from "next/link";
 
 type ButtonProps = {
   label: string;
-  href: string;
+  href: {} | string;
+  onClick?: () => void;
 };
 
-export function PageButton({ label, href }: ButtonProps) {
+export function PageButton({ label, href, onClick }: ButtonProps) {
   return (
     <Link href={href} passHref>
-      <CustomButton>{label}</CustomButton>
+      <CustomButton onClick={onClick}>{label}</CustomButton>
     </Link>
   );
 }

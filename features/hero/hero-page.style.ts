@@ -123,7 +123,13 @@ export const InfoContainer = styled.div<{ isDark: boolean }>`
 export const FreeComicList = styled.div<{ isDark: boolean }>`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   border-radius: 0.5rem;
   background: ${({ isDark }) => (isDark ? "#222" : "white")};
+`;
+export const Sites = styled.a`
+  text-decoration: none;
+  color: #ffa500;
+  padding: 0.2rem;
+  font-size: 1.1rem;
 `;
