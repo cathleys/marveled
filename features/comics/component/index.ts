@@ -1,1 +1,2 @@
-export { ComicsList } from "./comics-list";
+export { ComicsList } from "./comics-list/comics-list";
+export { ComicDetailsList } from "./comic-details/comic-details-list";

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import * as A from "@features";
 
-const CharacterListPage: NextPage = () => {
+const CharacterIndexPage: NextPage = () => {
   return (
     <A.PageContainer>
       <A.CharacterIndex />
@@ -9,4 +9,4 @@ const CharacterListPage: NextPage = () => {
   );
 };
 
-export default CharacterListPage;
+export default CharacterIndexPage;

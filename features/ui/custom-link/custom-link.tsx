@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 type CustomLinkProps = {
   href: string;
   label?: string;
+  target?: string;
 };
 
 const Anchor = styled(Link)`
@@ -16,9 +17,9 @@ const Anchor = styled(Link)`
     color: #f2c94d;
   }
 `;
-export function CustomLink({ href, label }: CustomLinkProps) {
+export function CustomLink({ href, label, target }: CustomLinkProps) {
   return (
-    <Anchor href={href} passHref>
+    <Anchor href={href} passHref target={target}>
       {label}
     </Anchor>
   );

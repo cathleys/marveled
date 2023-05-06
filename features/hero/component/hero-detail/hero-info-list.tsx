@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link, Tooltip, Collapse } from "@mui/material";
+import { Tooltip, Collapse } from "@mui/material";
 import { useRouter } from "next/router";
 import { useHero } from "@features/hero/api";
 import { HeroInfo } from "./hero-info";
@@ -21,11 +21,7 @@ export function HeroInfoList() {
   return (
     <>
       {results?.map((hero: any) => (
-        <HeroInfo
-          key={hero.id}
-          {...hero}
-          attributionText={`${attributionText}`}
-        />
+        <HeroInfo key={hero.id} {...hero} attributionText={attributionText} />
       ))}
       <Tooltip title="Click me" placement="top" arrow>
         <A.CommercialStick
@@ -44,23 +40,13 @@ export function HeroInfoList() {
 
       <A.FreeComicList isDark={isDarkMode}>
         <Collapse in={showLinks}>
-          <Link
-            underline="hover"
-            style={{ display: "inline-flex", padding: "1rem" }}
-            href={"https://readallcomics.com/"}
-            target="_black"
-          >
+          <A.Sites href="https://readallcomics.com/" target="_blank">
             Read All Comics
-          </Link>
+          </A.Sites>
 
-          <Link
-            underline="hover"
-            style={{ display: "inline-flex", padding: "1rem" }}
-            href={"https://comiconlinefree.net/"}
-            target="_black"
-          >
+          <A.Sites href="https://comiconlinefree.net/" target="_blank">
             Comic Online FREE
-          </Link>
+          </A.Sites>
         </Collapse>
       </A.FreeComicList>
 

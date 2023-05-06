@@ -17,12 +17,7 @@ export function FlipCardList() {
   return (
     <>
       {results?.map((comic: any) => (
-        <FlipCard
-          key={comic.id}
-          title={comic.title}
-          variantDescription={comic.variantDescription}
-          thumbnail={comic.thumbnail}
-        />
+        <FlipCard key={comic.id} {...comic} />
       ))}
     </>
   );

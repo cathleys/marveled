@@ -1,5 +1,5 @@
-import React from "react";
-import { PageButton } from "@features/ui";
+import React, { useContext } from "react";
+import { PageButton, ThemeContext } from "@features";
 import * as H from "./home-card.style";
 import { Routes } from "@config/routes";
 
@@ -10,8 +10,9 @@ type HeroPageCardProps = {
   info: string;
 };
 export function HomeCard({ title, info, ...cardProps }: HeroPageCardProps) {
+  const { isDarkMode } = useContext(ThemeContext);
   return (
-    <H.Card>
+    <H.Card isDark={isDarkMode}>
       <div>
         <H.Image {...cardProps} />
       </div>

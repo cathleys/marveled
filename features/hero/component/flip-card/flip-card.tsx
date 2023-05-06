@@ -2,8 +2,10 @@ import React, { SyntheticEvent, useState, useContext } from "react";
 import ReactCardFlip from "react-card-flip";
 import { ButtonWrapper, PageButton, ThemeContext } from "@features";
 import * as F from "@features/ui/card/flip-card.style";
+import { Routes } from "@config/routes";
 
 type FlipCardProps = {
+  id: number;
   title: string;
   variantDescription: string;
   thumbnail: {
@@ -13,6 +15,7 @@ type FlipCardProps = {
 };
 
 export function FlipCard({
+  id,
   title,
   variantDescription,
   thumbnail,
@@ -41,7 +44,13 @@ export function FlipCard({
               <p>{variantDescription}</p>
             </F.TitleAndTextWrapper>
             <ButtonWrapper style={{ padding: "1rem" }}>
-              <PageButton label="More Info" href={""} />
+              <PageButton
+                label="More Info"
+                href={{
+                  pathname: Routes.comicDetails,
+                  query: { comicId: id },
+                }}
+              />
             </ButtonWrapper>
           </F.BackCard>
         </ReactCardFlip>
