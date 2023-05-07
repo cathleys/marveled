@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { useComicsById } from "@features/comics/api";
-import { LoadingSpinner } from "@features";
+import { Footer, LoadingSpinner } from "@features";
 import { ComicDetailsById } from "./comic-details-by-id";
 
 export function ComicDetailsList() {
@@ -20,9 +20,9 @@ export function ComicDetailsList() {
           key={comic.id}
           {...comic}
           attributionText={attributionText}
-          copyright={copyright}
         />
       ))}
+      <Footer copyright={copyright} />
     </>
   );
 }

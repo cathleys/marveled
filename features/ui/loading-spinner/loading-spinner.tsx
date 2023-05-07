@@ -6,6 +6,7 @@ const LoadingStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 `;
 export function LoadingSpinner() {
   return (

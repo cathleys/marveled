@@ -8,13 +8,7 @@ const HomePage = () => {
         <H.HomeBanner />
         <H.HeroPageCardContainer>
           {H.homeCards.map((card, index) => (
-            <H.HomeCard
-              key={index}
-              src={card.src}
-              alt={card.name}
-              title={card.title}
-              info={card.info}
-            />
+            <H.HomeCard key={index} alt={card.name} {...card} />
           ))}
         </H.HeroPageCardContainer>
       </H.PageContainer>

@@ -1,7 +1,12 @@
 import React, { useContext } from "react";
 import Head from "next/head";
 import * as P from "./page-container.style";
-import { SearchContainer, ThemeContext } from "@features";
+import {
+  SearchContainer,
+  ThemeContext,
+  Footer,
+  useCompleteCharacters,
+} from "@features";
 import HeaderBoard from "./header-board";
 
 type PageProps = {
@@ -10,7 +15,8 @@ type PageProps = {
 
 export function PageContainer({ children }: PageProps) {
   const { isDarkMode } = useContext(ThemeContext);
-
+  const { data } = useCompleteCharacters();
+  const { copyright } = data || {};
   return (
     <>
       <Head>
@@ -26,6 +32,7 @@ export function PageContainer({ children }: PageProps) {
       <P.Container isDark={isDarkMode}>
         <P.Main>{children}</P.Main>
       </P.Container>
+      <Footer copyright={copyright} />
     </>
   );
 }
