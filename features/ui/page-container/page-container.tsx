@@ -15,9 +15,8 @@ type PageProps = {
 
 export function PageContainer({ children }: PageProps) {
   const { isDarkMode } = useContext(ThemeContext);
-  const {
-    data: { copyright },
-  } = useCompleteCharacters();
+  const { data } = useCompleteCharacters();
+  const { copyright } = data || {};
   return (
     <>
       <Head>
