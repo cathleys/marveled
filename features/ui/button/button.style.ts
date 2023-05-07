@@ -4,9 +4,9 @@ export const CustomButton = styled.button`
   background: #fffacd;
   border: 2px solid black;
   color: black;
-  width: 7.625rem;
+  min-width: 7.625rem;
   border-radius: 0.5rem;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
 
   &:hover {
     background: black;
