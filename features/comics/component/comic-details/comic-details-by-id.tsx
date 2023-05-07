@@ -1,70 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import { Routes } from "@config/routes";
+import { saveAs } from "file-saver";
 import { PageButton } from "@features";
 import { ComicDetailsProps } from "@features/comics/types/comic-types";
-import { Routes } from "@config/routes";
+import * as C from "./comic-detail.style";
 
-export const ComicStyle = styled.div`
-  box-sizing: border-box;
-
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 4rem;
-`;
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  color: white;
-  padding: 2rem 0;
-`;
-
-export const ComicTitle = styled.h1`
-  margin-top: 0;
-`;
-export const SubComicTitle = styled.h3`
-  padding: 1rem 0 0 0;
-  margin: 0;
-`;
-export const CreatorStyle = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); // Set the number of columns to 2
-  grid-column-gap: 3.125rem;
-
-  padding: 0 1.5rem 1.5rem 1.5rem;
-`;
-export const TitleAndDescription = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 1rem 2rem;
-`;
-export const Image = styled.img`
-  margin-right: 0.5rem;
-  border: 3px solid black;
-  border-radius: 0.5rem;
-  box-shadow: 0px 50px 55px -51px rgba(148, 145, 148, 0.95);
-`;
-export const AdditionalDetails = styled.div`
-  padding: 4rem;
-
-  & > ${SubComicTitle} {
-    padding-bottom: 1rem;
-  }
-`;
-
-export const Variants = styled.li`
-  list-style-type: none;
-`;
-export const VariantText = styled.p`
-  color: #332c39;
-
-  &:hover {
-    color: #f2c94d;
-  }
-`;
-export const Attribution = styled.p`
-  color: #f1f1f1;
-`;
 export function ComicDetailsById({
   title,
   description,
@@ -75,64 +15,79 @@ export function ComicDetailsById({
   variants,
   prices,
   creators,
-  attributionText,
   copyright,
   series,
+  textObjects,
 }: ComicDetailsProps) {
   const [{ price }] = prices;
+
+  const handleDownloadClick = () => {
+    const url = `${thumbnail.path}.${thumbnail.extension}`;
+    saveAs(url, `${title}.${thumbnail.extension}`);
+  };
   return (
     <>
-      <ComicStyle>
+      <C.ComicStyle>
         <PageButton label={"Go back"} href={Routes.characters} />
-        <Wrapper>
-          <Image
-            src={`${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`}
-            alt={`${title}`}
-          />
+        <C.Wrapper>
+          <C.ImageButtonAndAttribution>
+            <C.Image
+              src={`${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`}
+              alt={`${title}`}
+            />
+            <C.Attribution>Copyright {copyright}</C.Attribution>
+            <PageButton
+              label="Download Cover"
+              href={`${thumbnail.path}.${thumbnail.extension}`}
+              onClick={handleDownloadClick}
+            />
+          </C.ImageButtonAndAttribution>
+
           <div>
-            <TitleAndDescription>
-              <ComicTitle>{title}</ComicTitle>
+            <C.TitleAndDescription>
+              <C.ComicTitle>{title}</C.ComicTitle>
               {description ? <p>{description}</p> : "No available description"}
-            </TitleAndDescription>
-            <CreatorStyle>
+            </C.TitleAndDescription>
+            <C.CreatorStyle>
               {creators?.items?.map((creator, index) => (
                 <div key={index}>
-                  <SubComicTitle>{creator.role}</SubComicTitle>
+                  <C.SubComicTitle>{creator.role}</C.SubComicTitle>
                   {creator.name}
                 </div>
               ))}
               <p>Page Count: {pageCount}</p>
               <p>Format: {format}</p>
               <p>Price: ${price}</p>
-            </CreatorStyle>
+            </C.CreatorStyle>
           </div>
-        </Wrapper>
-        <Attribution>{attributionText}</Attribution>
-        <Attribution>Copyright {copyright}</Attribution>
-      </ComicStyle>
-      <AdditionalDetails>
-        <SubComicTitle>Promotional Covers</SubComicTitle>
+        </C.Wrapper>
+      </C.ComicStyle>
+      <C.AdditionalDetails>
+        <C.SubComicTitle>Promotional Covers</C.SubComicTitle>
+        {textObjects?.map((item, index) => (
+          <p key={index}>{item.text}</p>
+        ))}
         {images?.map((image, index) => (
           <>
-            <Image
+            <C.Image
               key={index}
               src={`${image.path}/portrait_xlarge.${image.extension}`}
               alt={`${title}`}
             />
           </>
         ))}
-        <SubComicTitle>Issue Variants</SubComicTitle>
+        <C.SubComicTitle>Issue Variants</C.SubComicTitle>
         {variants?.map((variant, index) => (
-          <Variants key={index}>
-            <VariantText>{variant.name}</VariantText>
-          </Variants>
+          <C.Variants key={index}>
+            <C.VariantText>{variant.name}</C.VariantText>
+          </C.Variants>
         ))}
-        <SubComicTitle>Series</SubComicTitle>
+        <C.SubComicTitle>Series</C.SubComicTitle>
 
-        <Variants>
-          <VariantText>{series?.name}</VariantText>
-        </Variants>
-      </AdditionalDetails>
+        <C.Variants>
+          <C.VariantText>{series?.name}</C.VariantText>
+        </C.Variants>
+      </C.AdditionalDetails>
     </>
   );
 }

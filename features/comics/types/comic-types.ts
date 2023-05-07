@@ -1,7 +1,5 @@
 export type ComicDetailsProps = {
   copyright: string;
-  attributionText: string;
-  id: number;
   title: string;
   description: string;
   format: string;
@@ -40,4 +38,9 @@ export type ComicDetailsProps = {
     resourceURI: string;
     name: string;
   };
+  textObjects: [
+    {
+      text: string;
+    }
+  ];
 };
