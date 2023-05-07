@@ -19,5 +19,5 @@ type FooterProps = {
 };
 
 export function Footer({ copyright }: FooterProps) {
-  return <Container>Copyright {copyright}</Container>;
+  return <Container>Copyright {copyright + "ED"}</Container>;
 }
