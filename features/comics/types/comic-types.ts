@@ -1,4 +1,5 @@
 export type ComicDetailsProps = {
+  attributionText: string;
   copyright: string;
   title: string;
   description: string;

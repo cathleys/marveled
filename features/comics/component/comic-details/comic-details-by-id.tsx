@@ -6,6 +6,7 @@ import { ComicDetailsProps } from "@features/comics/types/comic-types";
 import * as C from "./comic-detail.style";
 
 export function ComicDetailsById({
+  attributionText,
   title,
   description,
   format,
@@ -15,7 +16,6 @@ export function ComicDetailsById({
   variants,
   prices,
   creators,
-  copyright,
   series,
   textObjects,
 }: ComicDetailsProps) {
@@ -35,7 +35,7 @@ export function ComicDetailsById({
               src={`${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`}
               alt={`${title}`}
             />
-            <C.Attribution>Copyright {copyright}</C.Attribution>
+            <C.Attribution>{attributionText}</C.Attribution>
             <PageButton
               label="Download Cover"
               href={`${thumbnail.path}.${thumbnail.extension}`}
