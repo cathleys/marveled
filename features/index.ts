@@ -5,6 +5,7 @@ export * from "./ui/loading-spinner";
 export * from "./ui/title-flag";
 export * from "./ui/custom-link";
 export * from "./ui/button";
+export * from "./ui/footer";
 export * from "./home";
 export * from "./hero";
 export * from "./characters-list";
