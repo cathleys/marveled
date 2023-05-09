@@ -69,7 +69,7 @@ export function CharacterIndex() {
                 <Link
                   key={character.name}
                   href={{
-                    pathname: Routes.characters,
+                    pathname: Routes.character,
                     query: { nameStartsWith: character.name },
                   }}
                   style={{ textDecoration: "none" }}

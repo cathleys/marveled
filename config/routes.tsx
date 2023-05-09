@@ -1,9 +1,9 @@
 export const Routes = {
   home: "/",
-  characters: "/characters",
-  characterList: "/character-index",
-  heroDetails: "/hero-details/[id]",
-  comics: "/comics",
-  comicDetails: "/comic-details/[comicId]",
+  characterIndex: "/character-index",
+  character: "/character",
+  characterDetails: "/character/[id]",
+  comics: "/comic",
+  comicDetails: "/comic/[comicId]",
   favorites: "/favorites",
 };

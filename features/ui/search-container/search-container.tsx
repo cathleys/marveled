@@ -16,7 +16,7 @@ export function SearchContainer() {
     const searchValue = inputRef?.current?.value;
 
     router.push({
-      pathname: Routes.characters,
+      pathname: Routes.character,
       query: { nameStartsWith: searchValue },
     });
   };
@@ -35,7 +35,7 @@ export function SearchContainer() {
       </S.LogoLink>
 
       <S.NavItems>
-        <CustomLink href={`${Routes.characterList}`} label="Characters A-Z" />
+        <CustomLink href={`${Routes.characterIndex}`} label="Characters A-Z" />
         <CustomLink href={`${Routes.comics}`} label="Comics" />
         <CustomLink href={`${Routes.favorites}`} label="Add to Favorites" />
       </S.NavItems>

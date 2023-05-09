@@ -18,7 +18,7 @@ export function CharacterCard({ id, name, thumbnail }: CharProps) {
   return (
     <Anchor
       href={{
-        pathname: Routes.heroDetails,
+        pathname: Routes.characterDetails,
         query: { id: id },
       }}
     >
