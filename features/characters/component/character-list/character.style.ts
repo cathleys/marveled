@@ -14,14 +14,15 @@ export const Card = styled.div<{ isDark: boolean }>`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
   background: ${({ isDark }) => (isDark ? "#222" : "white")};
+  color: ${({ isDark }) => (isDark ? "#F1F1F1" : "#332c39")};
   border: ${({ isDark }) => (isDark ? "1px solid #4f4557" : "none")};
   border-radius: 0.75rem;
-  overflow: hidden;
   box-shadow: ${({ isDark }) =>
     isDark
       ? "0px 50px 55px -51px rgba(148, 145, 148, 0.95)"
-      : "-1px 33px 58px -23px rgba(0, 0, 0, 0.36)"};
+      : "-1px 33px 33px -23px rgba(0, 0, 0, 0.36)"};
 
   object-fit: cover;
   padding: 0.5rem;
@@ -40,6 +41,4 @@ export const Anchor = styled(Link)`
   color: white;
 `;
 
-export const Name = styled.h4<{ isDark: boolean }>`
-  color: ${({ isDark }) => (isDark ? "#F1F1F1" : "#332c39")};
-`;
+export const Name = styled.h4``;

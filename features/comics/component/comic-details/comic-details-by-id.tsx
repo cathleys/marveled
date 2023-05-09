@@ -28,7 +28,7 @@ export function ComicDetailsById({
   return (
     <>
       <C.ComicStyle>
-        <PageButton label={"Go back"} href={Routes.characters} />
+        <PageButton label={"Go back"} href={Routes.character} />
         <C.Wrapper>
           <C.ImageButtonAndAttribution>
             <C.Image

@@ -6,15 +6,18 @@ import { HeroInfo } from "./hero-info";
 import * as A from "@features";
 
 export function HeroInfoList() {
+  const { isDarkMode } = useContext(A.ThemeContext);
   const router = useRouter();
   const { id } = router.query;
   const { data, isLoading, isError } = useHero(Number(id));
   const [showLinks, setShowLinks] = useState(false);
-  const { isDarkMode } = useContext(A.ThemeContext);
 
   if (isLoading) return <A.LoadingSpinner />;
 
-  if (isError) return <p>Error</p>;
+  if (isError)
+    return (
+      <A.EmptyPage isDark={isDarkMode}>Error, Refresh the browser</A.EmptyPage>
+    );
 
   const { attributionText } = data || {};
   const { results } = data?.data || {};
@@ -43,13 +46,14 @@ export function HeroInfoList() {
           <A.Sites href="https://readallcomics.com/" target="_blank">
             Read All Comics
           </A.Sites>
-
           <A.Sites href="https://comiconlinefree.net/" target="_blank">
             Comic Online FREE
           </A.Sites>
         </Collapse>
       </A.FreeComicList>
-
+      <br></br>
+      <br></br>
+      <A.TitleFlag text="Comics Section" />
       <A.CardContainer>
         <A.FlipCardList />
       </A.CardContainer>

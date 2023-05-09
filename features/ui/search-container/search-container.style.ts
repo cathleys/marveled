@@ -1,7 +1,13 @@
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import Link from "next/link";
 import { HeaderName } from "../page-container";
 
+export const Title = styled(HeaderName)`
+  font-size: 1rem;
+  transform: none;
+  letter-spacing: normal;
+  text-shadow: -0.5px 0.5px white, 0.5px 0.5px yellow, 1px 1px orange;
+`;
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -15,14 +21,11 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     padding: 1rem 0;
-  }
-`;
 
-export const Title = styled(HeaderName)`
-  font-size: 1rem;
-  transform: none;
-  letter-spacing: normal;
-  text-shadow: -0.5px 0.5px white, 0.5px 0.5px yellow, 1px 1px orange;
+    ${Title} {
+      font-size: 0.9rem;
+    }
+  }
 `;
 
 export const LogoLink = styled(Link)`
