@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { useRouter } from "next/router";
-import { useCharacters } from "@features/characters/api/use-characters";
 import { CharacterCard } from "./character-card";
 import * as C from "@features";
 
 export function CharacterList() {
   const router = useRouter();
   const searchHero = router.query.nameStartsWith as string;
-  const { data, isLoading, isError, refetch } = useCharacters(searchHero);
+  const { data, isLoading, isError, refetch } = C.useCharacters(searchHero);
   const { results } = data?.data || {};
-  const { isDarkMode } = React.useContext(C.ThemeContext);
+  const { isDarkMode } = useContext(C.ThemeContext);
 
   useEffect(() => {
     refetch();
