@@ -8,6 +8,7 @@ import * as S from "./search-container.style";
 export function SearchContainer() {
   const router = useRouter();
   const { isDarkMode, toggleColorMode } = useContext(ThemeContext);
+
   const inputRef = useRef<HTMLInputElement>(null);
   const label = { inputProps: { "aria-label": "dark mode" } };
 
@@ -36,6 +37,7 @@ export function SearchContainer() {
       <S.NavItems>
         <CustomLink href={`${Routes.characterList}`} label="Characters A-Z" />
         <CustomLink href={`${Routes.comics}`} label="Comics" />
+        <CustomLink href={`${Routes.favorites}`} label="Add to Favorites" />
       </S.NavItems>
 
       <S.Form>
