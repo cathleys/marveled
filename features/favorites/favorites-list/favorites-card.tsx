@@ -26,7 +26,7 @@ export function FavoritesCard({ id, name, thumbnail }: FavoritesCardProps) {
         <F.AnchorLink
           isDark={isDarkMode}
           href={{
-            pathname: Routes.heroDetails,
+            pathname: Routes.characterDetails,
             query: { id: id },
           }}
           passHref

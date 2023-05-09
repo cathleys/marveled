@@ -35,13 +35,11 @@ export function HeroInfo({
     if (updatedFavorites.has(id)) {
       updatedFavorites.delete(id);
       setFavorites(updatedFavorites);
-      console.log("unfavorite");
     } else {
       updatedFavorites.add(id);
       setFavorites(
         (prevFavorites) => new Set([...Array.from(prevFavorites), id])
       );
-      console.log("favorite");
     }
     localStorage.setItem(
       "favorites",
@@ -58,7 +56,6 @@ export function HeroInfo({
     } else {
       localStorage.removeItem("faveItem" + id);
     }
-    console.log("favoriteItems", updatedFavorites);
   };
 
   return (
