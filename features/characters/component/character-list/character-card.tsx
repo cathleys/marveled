@@ -14,6 +14,7 @@ type CharProps = {
 
 export function CharacterCard({ id, name, thumbnail }: CharProps) {
   const { isDarkMode } = useContext(ThemeContext);
+
   return (
     <Anchor
       href={{
@@ -26,7 +27,7 @@ export function CharacterCard({ id, name, thumbnail }: CharProps) {
           src={`${thumbnail.path}/portrait_xlarge.${thumbnail.extension}`}
           alt={`${name}`}
         />
-        <Name isDark={isDarkMode}>{name}</Name>
+        <Name>{name}</Name>
       </Card>
     </Anchor>
   );

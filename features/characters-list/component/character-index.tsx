@@ -21,7 +21,11 @@ export function CharacterIndex() {
 
   if (isError) {
     console.error(error);
-    return <h2>There is something wrong with API...</h2>;
+    return (
+      <G.EmptyPage isDark={isDarkMode}>
+        There is something wrong with API...
+      </G.EmptyPage>
+    );
   }
 
   const { results } = data?.data || {};

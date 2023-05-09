@@ -10,11 +10,11 @@ export const Container = styled.div`
 export const TitleAndTextWrapper = styled.div`
   padding: 1rem;
 `;
-export const FrontCardWrapper = styled.div<{ isDark: boolean }>`
+export const FrontCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: ${({ isDark }) => (isDark ? "3px solid #f1f1f1" : "3px solid black")};
+  border: 3px solid black;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   overflow: hidden;

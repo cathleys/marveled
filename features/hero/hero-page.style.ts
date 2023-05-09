@@ -95,7 +95,6 @@ export const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 2rem;
 `;
 export const InfoContainer = styled.div<{ isDark: boolean }>`
   padding: 1rem 0 0 0;
