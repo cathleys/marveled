@@ -42,8 +42,12 @@ export function SearchContainer() {
       </S.LogoLink>
 
       <S.NavItems>
-        {menuItems.map((item, index) => (
-          <C.CustomLink key={index} {...item} />
+        {menuItems.map((menuItem, index) => (
+          <C.CustomLink
+            key={index}
+            {...menuItem}
+            isActive={router.pathname === menuItem.href}
+          />
         ))}
       </S.NavItems>
 
