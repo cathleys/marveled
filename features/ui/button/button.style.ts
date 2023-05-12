@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import styled from "styled-components";
 
 export const CustomButton = styled.button`
@@ -9,8 +10,17 @@ export const CustomButton = styled.button`
   padding: 0.5rem;
 
   &:hover {
-    background: black;
-    border: 2px solid yellow;
-    color: yellow;
+    background-image: linear-gradient(
+      111.4deg,
+      rgba(238, 113, 113, 1) 1%,
+      rgba(246, 215, 148, 1) 58%
+    );
   }
+`;
+export const TransparentButton = styled(Button)`
+  background: none;
+  border: none;
+  outline: none;
+  font-family: Comic Neue, Sans-Serif;
+  color: white;
 `;

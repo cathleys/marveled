@@ -13,7 +13,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 7rem;
+  padding: 0 10rem;
   min-height: 3.5rem;
   background-color: #343a40;
 
@@ -60,9 +60,18 @@ export const Input = styled.input`
 
 export const NavItems = styled.nav`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  @media (max-width: 64em) {
+    margin: 0.7rem;
+  }
+`;
+
+export const PageAndSwitch = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
   @media (max-width: 64em) {
     flex-direction: column;
-    margin: 0.7rem;
+    align-items: center;
   }
 `;

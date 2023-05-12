@@ -3,7 +3,7 @@ export * from "./ui/search-container";
 export * from "./ui/theme-provider";
 export * from "./ui/loading-spinner";
 export * from "./ui/title-flag";
-export * from "./ui/custom-link";
+export * from "./ui/navigation";
 export * from "./ui/button";
 export * from "./ui/footer";
 export * from "./home";
