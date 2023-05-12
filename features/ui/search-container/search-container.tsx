@@ -1,13 +1,20 @@
 import React, { useRef, useContext } from "react";
 import { Routes } from "@config/routes";
 import { useRouter } from "next/router";
-import { Button, Switch } from "@mui/material";
-import { CustomLink, ThemeContext } from "@features";
+import * as M from "@mui/material";
+import * as C from "@features";
 import * as S from "./search-container.style";
+
+const menuItems = [
+  { label: "Characters A-Z", href: Routes.characterIndex },
+  { label: "Comics", href: Routes.comics },
+  { label: "Favorites", href: Routes.favorites },
+  { label: "Take A Quiz", href: Routes.quiz },
+];
 
 export function SearchContainer() {
   const router = useRouter();
-  const { isDarkMode, toggleColorMode } = useContext(ThemeContext);
+  const { isDarkMode, toggleColorMode } = useContext(C.ThemeContext);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const label = { inputProps: { "aria-label": "dark mode" } };
@@ -35,9 +42,13 @@ export function SearchContainer() {
       </S.LogoLink>
 
       <S.NavItems>
-        <CustomLink href={`${Routes.characterIndex}`} label="Characters A-Z" />
-        <CustomLink href={`${Routes.comics}`} label="Comics" />
-        <CustomLink href={`${Routes.favorites}`} label="Add to Favorites" />
+        {menuItems.map((menuItem, index) => (
+          <C.CustomLink
+            key={index}
+            {...menuItem}
+            isActive={router.pathname === menuItem.href}
+          />
+        ))}
       </S.NavItems>
 
       <S.Form>
@@ -49,7 +60,7 @@ export function SearchContainer() {
           onKeyDown={handleEnterPress}
         />
 
-        <Button
+        <M.Button
           data-cy="search-button"
           onClick={handleSearchClick}
           variant="outlined"
@@ -59,9 +70,9 @@ export function SearchContainer() {
           }}
         >
           Search
-        </Button>
+        </M.Button>
       </S.Form>
-      <Switch {...label} color="warning" onClick={() => toggleColorMode()} />
+      <M.Switch {...label} color="warning" onClick={() => toggleColorMode()} />
     </S.Container>
   );
 }

@@ -6,4 +6,5 @@ export const Routes = {
   comics: "/comic",
   comicDetails: "/comic/[comicId]",
   favorites: "/favorites",
+  quiz: "/quiz",
 };
