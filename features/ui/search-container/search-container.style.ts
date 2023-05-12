@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { HeaderName } from "../page-container";
 
-export const Title = styled(HeaderName)`
+export const Title = styled.h1`
   font-size: 1rem;
   transform: none;
-  letter-spacing: normal;
   text-shadow: -0.5px 0.5px white, 0.5px 0.5px yellow, 1px 1px orange;
 `;
 export const Container = styled.div`
