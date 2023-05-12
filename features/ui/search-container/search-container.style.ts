@@ -21,10 +21,6 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     padding: 1rem 0;
-
-    ${Title} {
-      font-size: 0.9rem;
-    }
   }
 `;
 
@@ -63,7 +59,10 @@ export const Input = styled.input`
 `;
 
 export const NavItems = styled.nav`
+  display: flex;
+  flex-direction: row;
   @media (max-width: 64em) {
+    flex-direction: column;
     margin: 0.7rem;
   }
 `;
