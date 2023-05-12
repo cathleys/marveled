@@ -7,7 +7,7 @@ import * as S from "./search-container.style";
 
 export function SearchContainer() {
   const router = useRouter();
-  const { isDarkMode, toggleColorMode } = useContext(C.ThemeContext);
+  const { toggleColorMode } = useContext(C.ThemeContext);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const label = { inputProps: { "aria-label": "dark mode" } };
@@ -31,7 +31,7 @@ export function SearchContainer() {
   return (
     <S.Container data-cy="search-container">
       <S.LogoLink href={`${Routes.home}`} passHref>
-        <S.Title isDark={isDarkMode}>Marveled</S.Title>
+        <S.Title>Marveled</S.Title>
       </S.LogoLink>
       <S.PageAndSwitch>
         <C.NavigationPage />
