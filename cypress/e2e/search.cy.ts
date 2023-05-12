@@ -3,7 +3,7 @@ describe("Search results", () => {
     cy.visit("http://localhost:3000");
     cy.get("header").find('[data-cy="h1"]').should("be.visible");
 
-    cy.get('[data-cy="search-container"]')
+    cy.get('[data-cy="logo"]')
       .contains("Marveled")
       .should("be.visible")
       .click();

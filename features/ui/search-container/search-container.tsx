@@ -29,8 +29,8 @@ export function SearchContainer() {
   };
 
   return (
-    <S.Container data-cy="search-container">
-      <S.LogoLink href={`${Routes.home}`} passHref>
+    <S.Container>
+      <S.LogoLink data-cy="logo" href={`${Routes.home}`} passHref>
         <S.Title>Marveled</S.Title>
       </S.LogoLink>
       <S.PageAndSwitch>
