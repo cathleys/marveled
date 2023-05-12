@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { HeaderName } from "../page-container";
 
-export const Title = styled(HeaderName)`
+export const Title = styled.h1`
   font-size: 1rem;
   transform: none;
-  letter-spacing: normal;
   text-shadow: -0.5px 0.5px white, 0.5px 0.5px yellow, 1px 1px orange;
 `;
 export const Container = styled.div`
@@ -13,7 +11,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 7rem;
+  padding: 0 10rem;
   min-height: 3.5rem;
   background-color: #343a40;
 
@@ -60,9 +58,18 @@ export const Input = styled.input`
 
 export const NavItems = styled.nav`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  @media (max-width: 64em) {
+    margin: 0.7rem;
+  }
+`;
+
+export const PageAndSwitch = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
   @media (max-width: 64em) {
     flex-direction: column;
-    margin: 0.7rem;
+    align-items: center;
   }
 `;

@@ -22,7 +22,7 @@ const Main = styled.div<{ bgImage: string }>`
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #343a40),
     url(${(props) => props.bgImage}) center;
   background-size: cover;
-  transition: background 0.5s ease;
+  transition: background 0.2s fadein;
 `;
 const TimerContainer = styled.div`
   position: relative;

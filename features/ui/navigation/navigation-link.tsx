@@ -1,31 +1,29 @@
 import React from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
-
-type CustomLinkProps = {
+import MenuItem from "@mui/material/MenuItem";
+type NavigationLinkProps = {
   href: string;
   label?: string;
   target?: string;
-  isActive: boolean;
 };
 
-const ListItem = styled.li<{ isActive: boolean }>`
+export const ListItem = styled(MenuItem)`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   list-style-type: none;
   padding: 0.3rem;
-  background: ${({ isActive }) => (isActive ? "#344054" : "transparent")};
   border-radius: 0.2rem;
 `;
 
 const Anchor = styled(Link)`
   text-decoration: none;
   padding: 0 0.5rem;
-  color: white;
+  color: black;
 `;
-export function CustomLink({ href, label, target, isActive }: CustomLinkProps) {
+export function NavigationLink({ href, label, target }: NavigationLinkProps) {
   return (
-    <ListItem isActive={isActive}>
+    <ListItem>
       <Anchor href={href} passHref target={target}>
         {label}
       </Anchor>
