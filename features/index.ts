@@ -12,3 +12,4 @@ export * from "./characters-list";
 export * from "./characters";
 export * from "./comics";
 export * from "./favorites";
+export * from "./quiz";
