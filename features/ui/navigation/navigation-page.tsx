@@ -29,7 +29,7 @@ export function NavigationPage() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        Pages
+        Menu
       </TransparentButton>
       <Menu
         id="basic-menu"

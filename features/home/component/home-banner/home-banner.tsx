@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import * as H from "./home-banner.style";
 import { PageButton, ThemeContext } from "@features/ui";
+import { Routes } from "@config/routes";
 
 export function HomeBanner() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -14,7 +15,13 @@ export function HomeBanner() {
             alien device, she transformed into the mighty cosmic powered hero,
             Captain Marvel!
           </H.InfoText>
-          <PageButton href="/" label="Learn More!" />
+          <PageButton
+            href={{
+              pathname: Routes.characterDetails,
+              query: { id: 1010338 },
+            }}
+            label="Learn More!"
+          />
         </H.TextWrapper>
       </H.Container>
     </H.BodyContainer>
