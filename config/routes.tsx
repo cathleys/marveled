@@ -1,5 +1,6 @@
 export const Routes = {
-  home: "/",
+  slug: "/",
+  home: "/home",
   characterIndex: "/character-index",
   character: "/character",
   characterDetails: "/character/[id]",
