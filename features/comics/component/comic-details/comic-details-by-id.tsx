@@ -29,13 +29,13 @@ export function ComicDetailsById({
     <>
       <C.ComicStyle>
         <PageButton label={"Go back"} href={Routes.character} />
-        <C.Wrapper>
+        <C.ComicDetailWrapper>
           <C.ImageButtonAndAttribution>
-            <C.Image
+            <C.ImageSrc
               src={`${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`}
               alt={`${title}`}
             />
-            <C.Attribution>{attributionText}</C.Attribution>
+            <C.AttributionText>{attributionText}</C.AttributionText>
             <PageButton
               label="Download Cover"
               href={`${thumbnail.path}.${thumbnail.extension}`}
@@ -49,8 +49,8 @@ export function ComicDetailsById({
               {description ? <p>{description}</p> : "No available description"}
             </C.TitleAndDescription>
             <C.CreatorStyle>
-              {creators?.items?.map((creator, index) => (
-                <div key={index}>
+              {creators?.items?.map((creator) => (
+                <div key={creator.name}>
                   <C.SubComicTitle>{creator.role}</C.SubComicTitle>
                   {creator.name}
                 </div>
@@ -60,25 +60,25 @@ export function ComicDetailsById({
               <p>Price: ${price}</p>
             </C.CreatorStyle>
           </div>
-        </C.Wrapper>
+        </C.ComicDetailWrapper>
       </C.ComicStyle>
       <C.AdditionalDetails>
         <C.SubComicTitle>Promotional Covers</C.SubComicTitle>
         {textObjects?.map((item, index) => (
-          <p key={index}>{item.text}</p>
+          <p key={`${(item.text, index)}`}>{item.text}</p>
         ))}
-        {images?.map((image, index) => (
+        {images?.map((image) => (
           <>
-            <C.Image
-              key={index}
+            <C.ImageSrc
+              key={image.path}
               src={`${image.path}/portrait_xlarge.${image.extension}`}
               alt={`${title}`}
             />
           </>
         ))}
         <C.SubComicTitle>Issue Variants</C.SubComicTitle>
-        {variants?.map((variant, index) => (
-          <C.Variants key={index}>
+        {variants?.map((variant) => (
+          <C.Variants key={variant.resourceURI}>
             <C.VariantText>{variant.name}</C.VariantText>
           </C.Variants>
         ))}
