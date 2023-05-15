@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import * as A from "@features";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { Routes } from "@config/routes";
 
 type HeroDetailsProps = {
   id: number;
@@ -82,7 +83,13 @@ export function HeroInfo({
           <A.HeroName>{name}</A.HeroName>
           <A.Description>{description}</A.Description>
           <A.ButtonWrapper style={{ paddingLeft: "1rem" }}>
-            <A.PageButton href="/" label="Find Out More!" />
+            <A.PageButton
+              href={{
+                pathname: Routes.characterEvents,
+                query: { characterId: id },
+              }}
+              label="Find Out More!"
+            />
             <A.Attribution>{attributionText}</A.Attribution>
           </A.ButtonWrapper>
         </A.InfoContainer>

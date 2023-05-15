@@ -3,6 +3,7 @@ export const Routes = {
   characterIndex: "/character-index",
   character: "/character",
   characterDetails: "/character/[id]",
+  characterEvents: "/character-by-events/[characterId]",
   comics: "/comic",
   comicDetails: "/comic/[comicId]",
   favorites: "/favorites",

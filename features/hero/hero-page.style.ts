@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
+  padding-top: 1rem;
 
   @media (max-width: 64em) {
     justify-content: center;

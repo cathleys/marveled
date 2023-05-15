@@ -8,7 +8,7 @@ export const ComicStyle = styled.div`
     flex-direction: column;
   }
 `;
-export const Wrapper = styled.div`
+export const ComicDetailWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -52,7 +52,7 @@ export const TitleAndDescription = styled.div`
     }
   }
 `;
-export const Image = styled.img`
+export const ImageSrc = styled.img`
   margin-bottom: 1.5rem;
   margin-right: 0.5rem;
   border: 3px solid black;
@@ -76,6 +76,6 @@ export const VariantText = styled.p`
     color: #f2c94d;
   }
 `;
-export const Attribution = styled.p`
+export const AttributionText = styled.p`
   color: #f1f1f1;
 `;

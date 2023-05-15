@@ -1,15 +1,16 @@
 import React, { useContext } from "react";
+import { Routes } from "@config/routes";
 import { PageButton, ThemeContext } from "@features";
 import * as H from "./home-card.style";
-import { Routes } from "@config/routes";
 
 type HeroPageCardProps = {
+  id: number;
   src: string;
   alt: string;
   title: string;
   info: string;
 };
-export function HomeCard({ title, info, ...cardProps }: HeroPageCardProps) {
+export function HomeCard({ title, info, id, ...cardProps }: HeroPageCardProps) {
   const { isDarkMode } = useContext(ThemeContext);
   return (
     <H.Card isDark={isDarkMode}>
@@ -21,7 +22,13 @@ export function HomeCard({ title, info, ...cardProps }: HeroPageCardProps) {
         <p>{info}</p>
       </H.TextandButtonWrapper>
       <H.ButtonWrapper>
-        <PageButton href={Routes.home} label="Find Out More!" />
+        <PageButton
+          href={{
+            pathname: Routes.comicDetails,
+            query: { comicId: id },
+          }}
+          label="Find Out More!"
+        />
       </H.ButtonWrapper>
     </H.Card>
   );
