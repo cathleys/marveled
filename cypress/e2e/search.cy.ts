@@ -1,6 +1,6 @@
 describe("Search results", () => {
   it("types hero name in search bar", () => {
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/home");
     cy.get("header").find('[data-cy="h1"]').should("be.visible");
 
     cy.get('[data-cy="logo"]')
