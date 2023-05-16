@@ -1,26 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+To view deployed [Marveled](https://marveled.vercel.app/) site,
+visit **marveled.vercel.app**
+
+## How I worked on this project
+
+My goal is to simulate professional work environment.
+
+- I built this app based on Figma design: [Screenshot of designs](docs/figma.JPG)
+- I worked on the tasks based on kanban board: [Screenshot of tasks](docs/kanban-board.png)
+- I used feature branches and Pull Requests: [Example PR](https://github.com/cathleys/marveled/pull/23)
+
+## How to navigate this project
+
+- Somewhat complex application logic: [Example code](https://github.com/cathleys/marveled/blob/b8a85f1930eceb63100abc550423f16ae26a6008/features/hero/component/hero-detail/hero-info.tsx)
+- Responsive CSS using styled components: [Example code](https://github.com/cathleys/marveled/blob/f08f0e0fa88292934e7221b190b73be4f495eef4/features/comics/component/comic-details/comic-details-by-id.tsx)
+- This app has multiple API calls from Marvel API: [Example data request](https://github.com/cathleys/marveled/blob/f08f0e0fa88292934e7221b190b73be4f495eef4/features/comics/api/use-comics-by-id.tsx) and [data transformation](https://github.com/cathleys/marveled/pull/29)
+- Integration test using Cypress: [Example test](docs/test.JPG)
+- CI/CD pipeline set up: [Screenshot of CI/CD](docs/github-cli.JPG)
+- Encounters merge-conflicts: [Example conflict](docs/merge-conflict.JPG)
+
+## Why I built the project this way
+
+- In a nutshell, the tech stack used in this app are widely supported by majority of users according to this [article](https://profy.dev/article/react-tech-stack).
+
+- styled-components is a react-specific CSS-in-JS styling solution that helps me to design with a custom css style.
+
+- Typescript helps to check javascript. This allows me to reduce bugs and errors in the code and make sure that the values are type safe.
+
+- Testing is essential part of app development. Cypress is a beginner and user-friendly with a great UI which helps me to test atleast part of the Marveled app easily.
+
+- I'm focused on Frontend/React development since it's something I'm interested in for now. I am planning to also learn backend in my dev journey.
+
+- Whenever I get stuck on a certain task, I usually reach out for help to essentially solve the problem and learn from their experience. I think I need to mention this since I'm a human and actively learning. I can't improve this app without their existence.
+
+## If I had more time I would change this
+
+- Separate some codes to its respective files such as the css styles, consistently.
+- Refactor some of the code: Especially this [part](https://github.com/cathleys/marveled/blob/1bfd8b15d867f7b27e86c8b38bac8babf5c2a8e3/features/characters/component/character-by-events/character-by-events-card.tsx) and this [part](https://github.com/cathleys/marveled/blob/main/config/routes.tsx)
+- Add more features, first is to make it AI powered app using Allan AI perhaps.
+
+## The Application
+
+The application is a comic book character app where you can search for marvel heroes and their comics using Marvel API. It has some added cool features that you can play around with as well.
+
+![The running application](docs/app.gif)
 
 ## Getting Started
 
-First, run the development server:
+This project is built with Next.js, TypeScript, Cypress & styled-components among others. To start working on the project, first clone the repository and install the dependencies.
+
+```bash
+npm install
+```
+
+Then run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Now you can open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Tests
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+This project is covered with Cypress tests. Although most tests for production apps are currently written with React Testing Library, Cypress is the best option to get started with testing. When you're new to testing the start can be very cumbersome and feel like you're in a completely new dev environment.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Cypress makes it much easier to get started with testing.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To run the Cypress tests on your local machine use this command:
+
+```bash
+npm run cypress
+```
 
 ## Learn More
 
@@ -30,9 +80,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
