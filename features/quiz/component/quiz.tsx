@@ -158,7 +158,7 @@ export function Quiz() {
       } else {
         setImage(image + 1);
       }
-    }, 15000);
+    }, 30000);
 
     return () => {
       clearInterval(interval);
