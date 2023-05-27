@@ -64,7 +64,7 @@ export const NavItems = styled.nav`
   }
 `;
 
-export const PageAndSwitch = styled.div`
+export const PageInputAndSwitch = styled.div`
   display: flex;
   flex-wrap: wrap;
 

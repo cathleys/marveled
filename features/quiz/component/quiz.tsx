@@ -1,14 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
-import {
-  Timer,
-  Trivia,
-  moneyItems,
-  questions,
-  Start,
-  PageButton,
-} from "@features";
+import * as Q from "@features";
 import { Routes } from "@config/routes";
+
 const MoneySection = styled.div`
   width: 25%;
   display: flex;
@@ -169,7 +163,7 @@ export function Quiz() {
     questionNumber > 1 &&
       setEarned(
         String(
-          moneyItems?.find((money) => money.id === questionNumber - 1)
+          Q.moneyItems?.find((money) => money.id === questionNumber - 1)
             ?.amount || 0
         )
       );
@@ -187,18 +181,21 @@ export function Quiz() {
                   <br></br>
                   You Earned: {earned}
                 </h3>
-                <PageButton label="Exit" href={Routes.home} />
+                <Q.PageButton label="Exit" href={Routes.home} />
               </Modal>
             ) : (
               <>
                 <TimerContainer>
                   <TimeBomb>
-                    <Timer setStop={setStop} questionNumber={questionNumber} />
+                    <Q.Timer
+                      setStop={setStop}
+                      questionNumber={questionNumber}
+                    />
                   </TimeBomb>
                 </TimerContainer>
                 <QuestionAndAnswerContainer>
-                  <Trivia
-                    questions={questions}
+                  <Q.Trivia
+                    questions={Q.questions}
                     setStop={setStop}
                     questionNumber={questionNumber}
                     setQuestionNumber={setQuestionNumber}
@@ -209,7 +206,7 @@ export function Quiz() {
           </Main>
           <MoneySection>
             <MoneyList>
-              {moneyItems.map((moneyItem) => (
+              {Q.moneyItems.map((moneyItem) => (
                 <MoneyListItem
                   key={moneyItem.id}
                   isActive={
@@ -224,7 +221,7 @@ export function Quiz() {
           </MoneySection>
         </ContainerStyle>
       ) : (
-        <Start setUserName={setUserName} />
+        <Q.Start setUserName={setUserName} />
       )}
     </>
   );

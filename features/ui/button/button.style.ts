@@ -1,5 +1,5 @@
-import { Button } from "@mui/material";
 import styled from "styled-components";
+import { Button } from "@mui/material";
 
 export const CustomButton = styled.button`
   background: #fffacd;
@@ -17,6 +17,7 @@ export const CustomButton = styled.button`
     );
   }
 `;
+
 export const TransparentButton = styled(Button)`
   background: none;
   border: none;
