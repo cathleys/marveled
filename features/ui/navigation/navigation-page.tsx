@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Routes } from "@config/routes";
-import { NavigationLink, TransparentButton } from "@features";
+import { NavigationLink } from "@features";
 import { NavItems } from "@features/ui/search-container/search-container.style";
 import Menu from "@mui/material/Menu";
+import { Button } from "@mui/material";
 
 const menuItems = [
   { label: "Characters A-Z", href: Routes.characterIndex },
@@ -22,15 +23,18 @@ export function NavigationPage() {
 
   return (
     <>
-      <TransparentButton
+      <Button
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
+        style={{
+          color: "white",
+        }}
       >
         Menu
-      </TransparentButton>
+      </Button>
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}

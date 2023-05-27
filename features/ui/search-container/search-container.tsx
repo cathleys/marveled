@@ -33,7 +33,7 @@ export function SearchContainer() {
       <S.LogoLink data-cy="logo" href={`${Routes.home}`} passHref>
         <S.Title>Marveled</S.Title>
       </S.LogoLink>
-      <S.PageAndSwitch>
+      <S.PageInputAndSwitch>
         <C.NavigationPage />
         <M.Switch
           {...label}
@@ -61,7 +61,7 @@ export function SearchContainer() {
             Search
           </M.Button>
         </S.Form>
-      </S.PageAndSwitch>
+      </S.PageInputAndSwitch>
     </S.Container>
   );
 }
